@@ -5,13 +5,15 @@ const Error404 = () => {
   return (
     <div className="container mt-5 text-center">
       <div className="row">
-        <h1>Error404...</h1>
+        <h1 className="title-error mt-2">404</h1>
+        <h4 className="mb-5">Not Found</h4>
       </div>
       <div className="row">
+        <h6>
+          Por favor verifique la direccion introducida e intentelo de nuevo o
+        </h6>
         <Link to="/">
-          <div className="col">
-            <button className="btn btn-danger mt-5">Volver a Inicio.</button>
-          </div>
+          <button className="btn btn-error404 mt-1">Volver a Inicio.</button>
         </Link>
       </div>
     </div>

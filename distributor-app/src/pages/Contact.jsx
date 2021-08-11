@@ -1,11 +1,19 @@
 import React from "react";
+import Maps from "../components/Maps";
+import SendEmailC from "../components/SendEmailC";
 
 const Contact = () => {
   return (
-    <div className="container">
+    <div className="container mt-4">
       <div className="row">
-        <div className="col mt-5">
-          <h1>Contacto</h1>
+        {/* articulo 1 */}
+        <div className="col-lg-6 col-12">
+          <Maps />
+        
+        </div>
+        {/* articulo 2 */}
+        <div className="col-lg-6 col-12 ">
+          <SendEmailC />
         </div>
       </div>
     </div>
