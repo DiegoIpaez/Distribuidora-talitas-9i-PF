@@ -26,34 +26,41 @@ const LoginUser = () => {
   return (
     <div className="row">
       <Form onSubmit={handleSubmit}>
-          <h3 className='text-center'>Bienvenido a</h3>
-          <h2 className='text-center mb-5'>Distribuidora las talitas</h2>
+        <h3 className="text-center">Bienvenido a </h3>
+        <h3 className="text-center">Distribuidora las Talitas</h3>
+        <hr class="userlogin-hr mb-4" />
         <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label>Email:*</Form.Label>
+          <Form.Label>
+            Email:<span className="text-required">*</span>
+          </Form.Label>
           <Form.Control
             onChange={handleChange}
             type="email"
             placeholder="user@gmail.com"
+            className="inputLoginUser"
           />
-          <Form.Text className="text-muted">
-            We'll never share your email with anyone else.
+          <Form.Text className="text-muted ps-1">
+            (* We'll never share your email with anyone else.)
           </Form.Text>
         </Form.Group>
 
         <Form.Group className="mb-3 mb-4" controlId="formBasicPassword">
-          <Form.Label>Contraseña:*</Form.Label>
+          <Form.Label>
+            Contraseña:<span className="text-required">*</span>
+          </Form.Label>
           <Form.Control
             onChange={handleChange}
             type="password"
             placeholder="Password"
+            className="inputLoginUser"
           />
         </Form.Group>
-        <span className='ps-2'>olvidaste tu contraseña?.</span>
+        <span className="ps-2">olvidaste tu contraseña?.</span>
         <hr />
         <div className="d-grid gap-2">
-        <Button className='btn-loginUser' type="submit">
-          Submit
-        </Button>
+          <Button className="btn-loginUser" type="submit">
+            Iniciar sesión
+          </Button>
         </div>
       </Form>
     </div>
