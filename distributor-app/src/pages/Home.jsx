@@ -10,7 +10,7 @@ const Home = () => {
       <div className="row">
        <Carrusel />
       </div>
-      <div className="container">
+      <div className="container mt-5">
         <ProductosDestacados />
       </div>
     </div>
