@@ -273,3 +273,21 @@ footer {
 }
 
 /* Fin de Screen */
+
+
+/* Carrito */
+.carritoBox{
+  background-color: #dadada;
+  font-size: 15px;
+  color: #777777;
+}
+.pagarBox{
+  background-color: #f3f3f3;
+}
+
+.img-carrito{
+  width: 120px;
+  height: 100px;
+}
+
+/* Fin de Carrito */
