@@ -7,10 +7,10 @@ const Admin = () => {
   return (
     <div className="container">
       <div className="row">
-        <div className="col-md-6 mt-5 mb-4 col-12">
+        <div className="col-lg-12 col-xl-6 col-md-12 mt-5 mb-4 col-12">
           <TableUsuarios />
         </div>
-        <div className="col-md-6 mt-5 mb-4 col-12">
+        <div className="col-lg-12 col-xl-6 col-md-12 mt-5 mb-4 col-12">
           <TableCategorias />
         </div>
       </div>

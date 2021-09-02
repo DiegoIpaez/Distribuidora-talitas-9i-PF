@@ -12,7 +12,7 @@ const TableProductos = () => {
       {/* Fin de Titulo */}
       {/* ------------------------------ */}
       {/* Titulo tabla */}
-      <div className="row appTabla">
+      <div className="row appTabla mb-1">
         <div className="col-md-3 col-12 pt-3 pb-3 ">Nombres</div>
         <div className="col-md-2 col-12 pt-3 pb-3">Disponible</div>
         <div className="col-md-2 col-12 pt-3 pb-3">Precio</div>
@@ -21,18 +21,18 @@ const TableProductos = () => {
       {/* Fin de Titulo Tabla */}
       {/* ------------------------------ */}
       {/* Cuerpo Tabla */}
-      <div className="row mt-2">
-        <div className="col-md-3 col-12 mt-1">Nombre</div>
-        <div className="col-md-2 col-12 mt-1">Disponible</div>
-        <div className="col-md-2 col-12 mt-1">Precio</div>
-        <div className="col-md-3 col-12 mt-1">Categorias</div>
-        <div className="col-md-2 col-12">
+      <div className="row">
+        <div className="col-md-3 col-12 mt-2">Nombre</div>
+        <div className="col-md-2 col-12 mt-2">Disponible</div>
+        <div className="col-md-2 col-12 mt-2">Precio</div>
+        <div className="col-md-3 col-12 mt-2">Categorias</div>
+        <div className="col-md-2 col-12 mt-1">
           <button className="btn btn-primary me-3">
-            <i class="far fa-edit"></i>
+            <i className="far fa-edit"></i>
           </button>
 
           <button className="btn btn-danger">
-            <i class="fas fa-trash-alt"></i>
+            <i className="fas fa-trash-alt"></i>
           </button>
         </div>
 
