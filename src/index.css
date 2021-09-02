@@ -280,6 +280,8 @@ footer {
   background-color: #ff7300;
   font-size: 15px;
   color: #ffffff;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 
 }
 
@@ -290,9 +292,14 @@ footer {
   -moz-box-shadow: 6px 3px 20px 7px rgba(192, 192, 192, 1);
 }
 
+.cuerpoCarrito{
+  background-color: rgb(245, 245, 245);
+}
+
 .img-carrito{
   width: 120px;
   height: 100px;
+  border: 1px solid rgb(255, 136, 0);
 }
 
 .subtotalText{
@@ -303,6 +310,11 @@ footer {
   background-color: #ff7300!important;
   color: #f3f3f3 !important;
   font-size: 18px !important;
+}
+
+.btn-cantidad{
+  background-color: #e2e2e2 !important;
+  color: rgb(0, 0, 0) !important;
 }
 
 /* Fin de Carrito */
@@ -316,3 +328,9 @@ footer {
   border-top-right-radius: 10px;
   
 }
+
+
+
+/* Fin de Tabla Categorias */
+
+/* Fin de Admin */
