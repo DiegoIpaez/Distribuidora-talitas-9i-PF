@@ -7,11 +7,17 @@ const Admin = () => {
   return (
     <div className="container">
       <div className="row">
-        <TableUsuarios />
-        <TableCategorias />
+        <div className="col-md-6 mt-5 mb-4 col-12">
+          <TableUsuarios />
+        </div>
+        <div className="col-md-6 mt-5 mb-4 col-12">
+          <TableCategorias />
+        </div>
       </div>
       <div className="row">
-        <TableProductos />
+        <div className="col-md-12 col-12 mt-5">
+          <TableProductos />
+        </div>
       </div>
     </div>
   );

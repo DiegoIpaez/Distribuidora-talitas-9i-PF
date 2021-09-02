@@ -2,26 +2,38 @@ import React from "react";
 
 const TableCategorias = () => {
   return (
-    <div className="col-md-6 col-12 mt-5 mb-4">
-      <div className="container">
-        <div className="row">
+    <div className="container">
+      {/* Titulo */}
+      <div className="row ">
+        <div className="col">
           <h1>Categorias</h1>
         </div>
-        <div className="row text-center">
-          <div className="col-md-8 col-12">Nombre</div>
-          <div className="col-md-1 col-12">editar</div>
-          <div className="col-md-1 col-12">borrar</div>
-        </div>
-        <div className="row text-center">
-          <div className="col-md-8 col-12">Nombre</div>
-          <div className="col-md-1 col-12">
-            <button className="btn btn-warning">x</button>
-          </div>
-          <div className="col-md-1 col-12">
-            <button className="btn btn-warning">x</button>
-          </div>
-        </div>
       </div>
+      {/* Fin Titulo */}
+      {/* ------------------------------ */}
+      {/* Titulo Tabla */}
+      <div className="row appTabla mb-2">
+        <div className="col-12 pt-3 pb-3">Nombres</div>
+      </div>
+      {/* Fin de Titulo Tabla */}
+      {/* ------------------------------ */}
+      {/* Cuerpo Tabla */}
+      <div className="row">
+        <div className="col-md-5 col-12 mt-1">Nombre</div>
+        <div className="col-md-5 col-12 mt-1">id</div>
+        <div className="col-md-1 col-12">
+          <button className="btn btn-primary">
+            <i class="far fa-edit"></i>
+          </button>
+        </div>
+        <div className="col-md-1 col-12">
+          <button className="btn btn-danger">
+            <i class="fas fa-trash-alt"></i>
+          </button>
+        </div>
+        <hr className="mt-1" />
+      </div>
+      {/* Cuerpo Tabla */}
     </div>
   );
 };

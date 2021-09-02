@@ -16,8 +16,9 @@ const NavBar = () => {
     <Navbar collapseOnSelect expand="lg" className="navbar">
       <Container>
         <Navbar.Brand>
-          <Link to='/'><img src={imgs[0].img} className="logo-nav" alt="" /></Link>
-          
+          <Link to="/">
+            <img src={imgs[0].img} className="logo-nav" alt="" />
+          </Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
@@ -51,9 +52,11 @@ const NavBar = () => {
               </Dropdown.Toggle>
 
               <Dropdown.Menu>
-                <Dropdown.Item>Action</Dropdown.Item>
-                <Dropdown.Item>Another action</Dropdown.Item>
-                <Dropdown.Item>Something else</Dropdown.Item>
+                <Dropdown.Item>
+                  <Link className="nav-link" to="/carrito">
+                    Mi carrito
+                  </Link>
+                </Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
             <Dropdown>
@@ -63,8 +66,16 @@ const NavBar = () => {
               </Dropdown.Toggle>
 
               <Dropdown.Menu>
-                <Dropdown.Item>Action</Dropdown.Item>
-                <Dropdown.Item>Another action</Dropdown.Item>
+                <Dropdown.Item>
+                  <Link className="nav-link" to="/">
+                    Mi cuenta
+                  </Link>
+                </Dropdown.Item>
+                <Dropdown.Item>
+                  <Link className="nav-link" to="/admin">
+                    Admin
+                  </Link>
+                </Dropdown.Item>
                 <Dropdown.Divider />
                 <Dropdown.Item
                   onClick={() => {
@@ -72,7 +83,9 @@ const NavBar = () => {
                     history.push("/login");
                   }}
                 >
-                  Salir
+                  <span className="nav-link">
+                    <i class="fas fa-sign-out-alt"></i> Salir
+                  </span>
                 </Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
