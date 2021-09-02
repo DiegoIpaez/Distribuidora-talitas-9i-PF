@@ -277,17 +277,32 @@ footer {
 
 /* Carrito */
 .carritoBox{
-  background-color: #dadada;
+  background-color: #ff7300;
   font-size: 15px;
-  color: #777777;
+  color: #ffffff;
+
 }
+
 .pagarBox{
   background-color: #f3f3f3;
+  box-shadow: 6px 3px 20px 7px rgba(192, 192, 192, 1);
+  -webkit-box-shadow: 6px 3px 20px 7px rgba(192, 192, 192, 1);
+  -moz-box-shadow: 6px 3px 20px 7px rgba(192, 192, 192, 1);
 }
 
 .img-carrito{
   width: 120px;
   height: 100px;
+}
+
+.subtotalText{
+  color: #7e7e7e;
+}
+
+.btn-pedidoF{
+  background-color: #ff7300!important;
+  color: #f3f3f3 !important;
+  font-size: 18px !important;
 }
 
 /* Fin de Carrito */
