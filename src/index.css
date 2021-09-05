@@ -334,3 +334,20 @@ footer {
 /* Fin de Tabla Categorias */
 
 /* Fin de Admin */
+
+/* carrito */
+
+.itemCa{
+  border: solid gray;
+  padding: 10px;
+}
+.box{
+  padding: 10px;
+  margin: 10px;
+  box-shadow: 0 0 1rem #00000025 inset;
+}
+.grid-responsive{
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(200px, 1fr));
+  gap:10px;
+}

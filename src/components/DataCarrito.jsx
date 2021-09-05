@@ -1,4 +1,5 @@
 import React from "react";
+import Carrito from "../Actions/Carrito";
 
 const DataCarrito = () => {
   return (
@@ -68,6 +69,7 @@ const DataCarrito = () => {
                 </button>
               </div>
               <hr />
+              <Carrito />
             </div>
             
             {/* Fin de Cuerpo tabla */}

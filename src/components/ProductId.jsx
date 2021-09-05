@@ -1,5 +1,8 @@
 import React from "react";
 import {Link} from "react-router-dom"
+import Contador from "../Actions/Contador";
+import ContadorMejorado from "../Actions/ContadorMejorado";
+
 
 const ProductId = () => {
   return (
@@ -32,6 +35,13 @@ const ProductId = () => {
               </button></Link>
               <Link to="/">
               <button className="btn btn-volver ms-2 mb-5">VOLVER</button></Link>
+            </div>
+          </div>
+          <div className="container">
+          <div className="row">
+          < Contador />
+          <hr />
+          <ContadorMejorado />
             </div>
           </div>
         </div>
