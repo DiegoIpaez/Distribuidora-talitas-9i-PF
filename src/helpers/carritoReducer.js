@@ -1,4 +1,4 @@
-import { TYPES } from "../Actions/carritoActions";
+import { TYPES } from "./carritoActions";
 
 export const carritoInitialState = {
     producto:[

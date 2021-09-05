@@ -1,12 +1,13 @@
 import React from "react";
-import DataCarrito from "../components/DataCarrito";
-
+import CarritoProducto from "../components/CarritoProducto";
 
 const Carrito = () => {
   return (
     <div className="container mt-5 ">
       <div className="row">
-          <DataCarrito />
+        <div className="container">
+          <CarritoProducto />
+        </div>
       </div>
     </div>
   );
