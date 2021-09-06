@@ -10,6 +10,7 @@ import Error404 from "../pages/Error404";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
 import ProductScreen from "../pages/ProductScreen";
+import User from "../pages/User";
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
         <Route exact path="/product/:id" component={ProductScreen} />
         <Route exact path="/carrito" component={Carrito} />
         <Route exact path="/admin" component={Admin} />
+        <Route exact path="/user" component={User} />
         <Route component={Error404} />
       </Switch>
       <Footer />

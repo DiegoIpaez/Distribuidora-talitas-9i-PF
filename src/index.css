@@ -347,3 +347,21 @@ footer {
 /* Fin de Admin */
 
 /*  */
+
+/* User */
+
+/* UserData */
+.UserBoxData{
+  border: 1px solid rgb(192, 192, 192);
+  border-radius: 7px;
+}
+/* Fin de UserData */
+
+/* UserCompras */
+.MisComprasBox{
+  border: 1px solid rgb(199, 199, 199);
+  border-radius: 7px;
+}
+/* Fin de UserCompras */
+
+/* Fin de User */
