@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import BtnPaginacion from "./BtnPaginacion";
 
 const ProductosDestacados = () => {
   return (
@@ -19,16 +20,23 @@ const ProductosDestacados = () => {
             />
           </Link>
           <h6 className="titleProduct mb-3">
-            <Link to="/product/44" className="nameProducto">Aceite Cocinero 1lt</Link>
+            <Link to="/product/44" className="nameProducto">
+              Aceite Cocinero 1lt
+            </Link>
           </h6>
           <h6>
             <span className="marcaText ps-3 pe-3 pb-1">molinos</span>
           </h6>
           <h6 className="precio-producto mt-3 pe-1">$120,00</h6>
-          <Link to="/product/44"><button className="btn btn-compra pe-5 ps-5 mb-3 mt-1">
-            <i className="fas fa-shopping-cart"></i> AGREGAR
-          </button></Link>
+          <Link to="/product/44">
+            <button className="btn btn-compra pe-5 ps-5 mb-3 mt-1">
+              <i className="fas fa-shopping-cart"></i> AGREGAR
+            </button>
+          </Link>
         </div>
+      </div>
+      <div className="text-center">
+        <BtnPaginacion />
       </div>
     </div>
   );

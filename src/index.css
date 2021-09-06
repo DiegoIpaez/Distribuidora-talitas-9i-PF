@@ -56,7 +56,7 @@ code {
   display: inline-block !important;
 }
 
-.btn-categ-content{
+.btn-categ-content {
   display: none;
   position: absolute;
   background-color: #f9f9f9;
@@ -66,7 +66,7 @@ code {
   z-index: 1;
 }
 
-.btn-categ:hover .btn-categ-content{
+.btn-categ:hover .btn-categ-content {
   display: block;
 }
 
@@ -139,6 +139,12 @@ footer {
 }
 .Producto {
   border: 2px solid rgb(245, 179, 104);
+}
+
+.Producto:hover{
+  box-shadow: 0px 1px 15px -1px rgba(255, 90, 0, 0.78);
+  -webkit-box-shadow: 0px 1px 15px -1px rgba(255, 90, 0, 0.78);
+  -moz-box-shadow: 0px 1px 15px -1px rgba(255, 90, 0, 0.78);
 }
 
 .nameProducto {
@@ -351,16 +357,22 @@ footer {
 /* User */
 
 /* UserData */
-.UserBoxData{
-  border: 1px solid rgb(192, 192, 192);
+.UserBoxData {
+  border: 1px solid rgb(238, 238, 238);
   border-radius: 7px;
+  box-shadow: 0px -2px 10px 2px rgba(194, 194, 194, 0.95);
+  -webkit-box-shadow: 0px -2px 10px 2px rgba(194, 194, 194, 0.95);
+  -moz-box-shadow: 0px -2px 10px 2px rgba(194, 194, 194, 0.95);
 }
 /* Fin de UserData */
 
 /* UserCompras */
-.MisComprasBox{
-  border: 1px solid rgb(199, 199, 199);
+.MisComprasBox {
+  border: 1px solid rgb(236, 236, 236);
   border-radius: 7px;
+  box-shadow: 0px -2px 10px 2px rgba(194, 194, 194, 0.95);
+  -webkit-box-shadow: 0px -2px 10px 2px rgba(194, 194, 194, 0.95);
+  -moz-box-shadow: 0px -2px 10px 2px rgba(194, 194, 194, 0.95);
 }
 /* Fin de UserCompras */
 
