@@ -9,7 +9,7 @@ const UserDatos = () => {
         <hr />
         <div className="row">
           <div className="col">
-            <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Group className="mb-3" controlId="formBasicName">
               <Form.Label>Nombre</Form.Label>
               <Form.Control type="name"  />
             </Form.Group>
@@ -24,19 +24,19 @@ const UserDatos = () => {
         </div>
         <div className="row">
           <div className="col-md-4">
-            <Form.Group className="mb-3" controlId="formBasicPassword">
+            <Form.Group className="mb-3" controlId="formBasic">
               <Form.Label>Fecha de Nac.</Form.Label>
               <Form.Control type="password" placeholder="13/06/2000" />
             </Form.Group>
           </div>
           <div className="col-md-4">
-            <Form.Group className="mb-3" controlId="formBasicPassword">
+            <Form.Group className="mb-3" controlId="formBasic1">
               <Form.Label>Cod. area</Form.Label>
               <Form.Control type="number" placeholder="3000" />
             </Form.Group>
           </div>
           <div className="col-md-4">
-            <Form.Group className="mb-3" controlId="formBasicPassword">
+            <Form.Group className="mb-3" controlId="formBasic2">
               <Form.Label>Telefono</Form.Label>
               <Form.Control type="phone" placeholder="3816136233" />
             </Form.Group>
@@ -44,20 +44,20 @@ const UserDatos = () => {
         </div>
         <div className="row">
           <div className="col-md-6">
-            <Form.Group className="mb-3" controlId="formBasicPassword">
+            <Form.Group className="mb-3" controlId="formBasic3">
               <Form.Label>Tipo de Documento</Form.Label>
               <Form.Control type="text" placeholder="DNI.." />
             </Form.Group>
           </div>
           <div className="col-md-6">
-            <Form.Group className="mb-3" controlId="formBasicPassword">
+            <Form.Group className="mb-3" controlId="formBasic4">
               <Form.Label>Documento</Form.Label>
               <Form.Control type="text" placeholder="42156746" />
             </Form.Group>
           </div>
         </div>
 
-        <Form.Group className="mb-3" controlId="formBasicPassword">
+        <Form.Group className="mb-3" controlId="formBasic5">
           <Form.Label>Email</Form.Label>
           <Form.Control type="email" placeholder="lol@gmail.com" />
         </Form.Group>
