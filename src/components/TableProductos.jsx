@@ -1,4 +1,5 @@
 import React from "react";
+import BtnPaginacion from "./BtnPaginacion";
 
 const TableProductos = () => {
   return (
@@ -44,6 +45,9 @@ const TableProductos = () => {
         <hr className="mt-1" />
       </div>
       {/* Fin de Cuerpo Tabla */}
+      <div className="text-center">
+        <BtnPaginacion />
+      </div>
     </div>
   );
 };

@@ -50,6 +50,9 @@ code {
   border: none;
 }
 
+/* --------------------------------------- */
+/* BOTON CATEGORIA */
+
 .btn-categ {
   background-color: rgb(243, 243, 243) !important ;
   position: relative !important;
@@ -86,6 +89,9 @@ code {
 .btn-categ-content:hover .btn-categ-content2{
   display: block;
 }
+
+/* Fin de BOTON CATEGORIA */
+/* --------------------------------------------- */
 
 .iconos-nav {
   color: rgb(170, 170, 170);
@@ -394,3 +400,17 @@ footer {
 /* Fin de UserCompras */
 
 /* Fin de User */
+
+
+/* Btn PAGINACION */
+.btn-paginacion{
+  background-color:#ff8800 !important;
+  color: rgb(255, 255, 255) !important; 
+  border-radius: 90px !important;
+}
+.btn-paginacion:hover{
+  background-color: white !important;
+  color: #ff5100 !important;
+  border: 1px solid #ff5100 !important;
+}
+/* Fin Btn PAGINACION */
