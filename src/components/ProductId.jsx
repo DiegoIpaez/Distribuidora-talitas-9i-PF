@@ -1,5 +1,5 @@
 import React from "react";
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom";
 
 const ProductId = () => {
   return (
@@ -27,11 +27,13 @@ const ProductId = () => {
               <span>Precio por unidad</span>
               <h1 className="precio-producto2 mt-1 mb-4">$ 120,00</h1>
               <Link to="/carrito">
-              <button className="btn btn-compra ps-5 pe-5 mb-5">
-                <i className="fas fa-shopping-cart"></i> AGREGAR
-              </button></Link>
+                <button className="btn btn-compra ps-5 pe-5 mb-5">
+                  <i className="fas fa-shopping-cart"></i> AGREGAR
+                </button>
+              </Link>
               <Link to="/">
-              <button className="btn btn-volver ms-2 mb-5">VOLVER</button></Link>
+                <button className="btn btn-volver ms-2 mb-5">VOLVER</button>
+              </Link>
             </div>
           </div>
         </div>

@@ -6,10 +6,8 @@ const DataCarrito = () => {
       <div className="row">
         {/* Barra de Productos  */}
 
-
         <div className="col-md-9 col-12">
           <div className="container">
-
             {/* Titulos de Tabla */}
             <div className="row carritoBox">
               <div className="col-md-4 pt-3 pb-3 text-center ">
@@ -25,7 +23,6 @@ const DataCarrito = () => {
             </div>
             {/* Fin Titulos de Tabla */}
 
-
             {/* Cuerpo tabla */}
             <div className="row ">
               <div className="col-md-2 col-6 pt-3 pb-3 ">
@@ -36,19 +33,16 @@ const DataCarrito = () => {
                 />
               </div>
 
-
               {/* Breve descripcion */}
               <div className="col-md-2 col-6 pt-4 mt-1 pb-3">
                 <span>Aceite Cocinero 1lt</span>
                 <h6>Molinos</h6>
               </div>
 
-
               {/* Precio */}
               <div className="col-md-3 col-12 pt-5 pb-3  text-center cuerpoCarrito">
                 <h6>$120,00</h6>
               </div>
-
 
               {/* Cantidades */}
               <div className="col-md-4 col-12 pt-4 mt-3 pb-3 text-center">
@@ -64,12 +58,12 @@ const DataCarrito = () => {
               {/* Btn eliminar */}
               <div className="col-md-1 col-12 pt-4  pb-3 text-center cuerpoCarrito">
                 <button className="btn btn-danger mt-3">
-                  <i class="fas fa-trash-alt"></i>
+                  <i className="fas fa-trash-alt"></i>
                 </button>
               </div>
               <hr />
             </div>
-            
+
             {/* Fin de Cuerpo tabla */}
           </div>
         </div>
@@ -77,7 +71,7 @@ const DataCarrito = () => {
         {/*Fin  Barra de Productos  */}
 
         {/* -------------------------------------------- */}
-        
+
         {/* Total Productos */}
         <div className="col-md-3 col-12">
           <div className="container">

@@ -17,6 +17,11 @@ const TableProductos = () => {
         <div className="col-md-2 col-12 pt-3 pb-3">Disponible</div>
         <div className="col-md-2 col-12 pt-3 pb-3">Precio</div>
         <div className="col-md-3 col-12 pt-3 pb-3">Categorias</div>
+        <div className="col-2 mt-2 text-center">
+          <button className="btn">
+            <i className="fas fa-user-plus"></i>
+          </button>
+        </div>
       </div>
       {/* Fin de Titulo Tabla */}
       {/* ------------------------------ */}
@@ -26,7 +31,7 @@ const TableProductos = () => {
         <div className="col-md-2 col-12 mt-2">Disponible</div>
         <div className="col-md-2 col-12 mt-2">Precio</div>
         <div className="col-md-3 col-12 mt-2">Categorias</div>
-        <div className="col-md-2 col-12 mt-1">
+        <div className="col-md-2 col-12 mt-1 text-center">
           <button className="btn btn-primary me-3">
             <i className="far fa-edit"></i>
           </button>

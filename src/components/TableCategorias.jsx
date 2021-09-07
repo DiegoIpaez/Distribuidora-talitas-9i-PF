@@ -13,7 +13,12 @@ const TableCategorias = () => {
       {/* ------------------------------ */}
       {/* Titulo Tabla */}
       <div className="row appTabla mb-1">
-        <div className="col-12 pt-3 pb-3">Nombres</div>
+        <div className="col-10 pt-3 pb-3">Nombre</div>
+        <div className="col-2 mt-2 text-center">
+          <button className="btn">
+            <i className="fas fa-user-plus"></i>
+          </button>
+        </div>
       </div>
       {/* Fin de Titulo Tabla */}
       {/* ------------------------------ */}

@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 const BtnCategorias = () => {
   return (
@@ -15,7 +14,7 @@ const BtnCategorias = () => {
         {/* Categoria */}
         <div className="row mb-3">
           <div className="btn col-7">
-            <span><Link to='/product/44'>Aceites y vinagre</Link></span>
+            <span>Aceites y vinagre</span>
           </div>
           <div className="col-3"></div>
           <div className="btn col-2">
@@ -28,7 +27,7 @@ const BtnCategorias = () => {
         <div className="container btn-categ-content2">
           <div className="row mb-3">
             <div className="btn col-2">
-              <span><Link to='/product/44'>Aceite</Link></span>
+              <span>Aceite</span>
             </div>
             <div className="col-8"></div>
             <div className="btn col-2">

@@ -1,5 +1,5 @@
 import React from "react";
-import imgs from "../assets/img/imgs";
+import NavLogo from "../assets/img/NavLogo.png";
 import { Link, useHistory } from "react-router-dom";
 import {
   Navbar,
@@ -18,7 +18,7 @@ const NavBar = () => {
       <Container>
         <Navbar.Brand>
           <Link to="/">
-            <img src={imgs[0].img} className="logo-nav" alt="" />
+            <img src={NavLogo} className="logo-nav" alt="" />
           </Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -81,7 +81,7 @@ const NavBar = () => {
                   }}
                 >
                   <span className="nav-link">
-                    <i class="fas fa-sign-out-alt"></i> Salir
+                    <i className="fas fa-sign-out-alt"></i> Salir
                   </span>
                 </Dropdown.Item>
               </Dropdown.Menu>
