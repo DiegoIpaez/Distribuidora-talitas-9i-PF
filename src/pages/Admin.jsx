@@ -1,4 +1,5 @@
 import React from "react";
+import TablePadreCateg from "../components/TablePadreCateg"
 import TableCategorias from "../components/TableCategorias";
 import TableProductos from "../components/TableProductos";
 import TableUsuarios from "../components/TableUsuarios";
@@ -13,6 +14,12 @@ const Admin = () => {
         <div className="col-lg-12 col-xl-6 col-md-12 mt-5 mb-4 col-12">
           <TableCategorias />
         </div>
+      </div>
+      <div className="row">
+        <div className="col-lg-12 col-xl-6 col-md-12 mt-5 mb-4 col-12">
+         <TablePadreCateg />
+        </div>
+        <div className="col-lg-12 col-xl-6 col-md-12 mt-5 mb-4 col-12"></div>
       </div>
       <div className="row">
         <div className="col-md-12 col-12 mt-5">

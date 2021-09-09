@@ -1,7 +1,6 @@
-const url = "http://localhost:8080/api/categorias";
-// const url = "https://restserver-pm.herokuapp.com/api/categorias";
+const url = "http://localhost:8080/api/categoriasPadre";
 
-export const getCategorias = async (desde) => {
+export const getCategoriasP = async (desde) => {
   const resp = await fetch(`${url}?desde=${desde}`, {
     method: "GET",
 
@@ -14,7 +13,7 @@ export const getCategorias = async (desde) => {
   return datos;
 };
 
-export const getCategoriaId = async (id) => {
+export const getCategoriaPId = async (id) => {
   const resp = await fetch(`${url}/${id}`, {
     method: "GET",
 
@@ -27,7 +26,7 @@ export const getCategoriaId = async (id) => {
   return datos;
 };
 
-export const postCategoria = async (data) => {
+export const postCategoriaP = async (data) => {
   const resp = await fetch(`${url}`, {
     method: "POST",
     body: JSON.stringify(data),
@@ -41,7 +40,7 @@ export const postCategoria = async (data) => {
   return datos;
 };
 
-export const putCategoria = async (id, data) => {
+export const putCategoriaP = async (id, data) => {
   const resp = await fetch(`${url}/${id}`, {
     method: "PUT",
     body: JSON.stringify(data),
@@ -55,7 +54,7 @@ export const putCategoria = async (id, data) => {
   return datos;
 };
 
-export const deleteCategoria = async (id) => {
+export const deleteCategoriaP = async (id) => {
   const resp = await fetch(`${url}/${id}`, {
     method: "DELETE",
 
