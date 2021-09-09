@@ -8,7 +8,7 @@ const ModalRegisUser = ({ show, handleClose }) => {
     nombre: "",
     email: "",
     password: "",
-    rol: "",
+    rol: "USER_ROLE",
   });
 
   const handleChange = (e) => {
@@ -34,7 +34,7 @@ const ModalRegisUser = ({ show, handleClose }) => {
         nombre: "",
         email: "",
         password: "",
-        rol: "",
+        rol: "USER_ROLE",
       });
       handleClose();
     });
@@ -85,21 +85,7 @@ const ModalRegisUser = ({ show, handleClose }) => {
                 onChange={handleChange}
               />
             </div>
-            <div className="form-group sinDisplay">
-              <label></label>
-              <select
-                className="form-select"
-                name="rol"
-                aria-label="Default select example"
-                value={formValue.rol}
-                onChange={handleChange}
-                required
-              >
-                <option defaultValue="USER_ROLE">Usuario</option>
-                <option value="USER_ROLE">Usuario</option>
-                
-              </select>
-            </div>
+            {/*  */}
           </Modal.Body>
           <Modal.Footer>
             <div className="container">
