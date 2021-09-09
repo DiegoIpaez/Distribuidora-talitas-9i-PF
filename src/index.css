@@ -414,3 +414,25 @@ footer {
   border: 1px solid #ff5100 !important;
 }
 /* Fin Btn PAGINACION */
+
+
+/* Modal Regis */
+.tituloModal{
+  background-color: #ff7b00;
+  box-shadow: 0px -4px 13px 5px rgba(29,29,29,0.22);
+-webkit-box-shadow: 0px -4px 13px 5px rgba(29,29,29,0.22);
+-moz-box-shadow: 0px -4px 13px 5px rgba(29,29,29,0.22);
+}
+
+.cuerpoModal{
+  box-shadow: -1px 1px 13px 5px rgba(29,29,29,0.6);
+-webkit-box-shadow: -1px 1px 13px 5px rgba(29,29,29,0.6);
+-moz-box-shadow: -1px 1px 13px 5px rgba(29,29,29,0.6);
+}
+
+.sinDisplay{
+  display: none;
+}
+
+
+/* Fin de Modal Regis */
