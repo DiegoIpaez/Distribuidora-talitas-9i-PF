@@ -104,9 +104,7 @@ const TableProductos = () => {
             {producto.disponible ? "Disponible" : "No disponible"}
           </div>
           <div className="col-md-2 col-12 mt-2">${producto.precio}</div>
-          <div className="col-md-3 col-6 mt-2">
-            {producto.categoria.nombre}
-          </div>
+          <div className="col-md-3 col-6 mt-2">{producto.categoria.nombre}</div>
           <div className="col-md-2 col-6 mt-1 text-center">
             <button
               className="btn btn-primary me-3"

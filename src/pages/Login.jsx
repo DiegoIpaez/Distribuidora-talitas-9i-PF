@@ -108,7 +108,7 @@ export default function Login() {
                     className="inputLoginUser"
                   />
                 </Form.Group>
-                <span className="ps-2">olvidaste tu contraseña?.</span>
+                <span className="ps-2">Olvidaste tu contraseña?.</span>
 
                 <hr />
                 <div className="d-grid gap-2">

@@ -1,16 +1,14 @@
-import React from "react";
-// import { getCategorias } from "../helpers/categorias"
+import React, { useEffect, useState } from "react";
+import { getProductos } from "../helpers/productos";
 
 const BtnCategorias = () => {
-  // const [categorias, setCategorias] = useState([])
+  const [productos, setProductos] = useState([]);
 
-  // useEffect(() => {
-  //   getCategorias().then((respuesta)=>{
-  //     setCategorias(respuesta.categorias)
-  //   })
-  // }, [])
-
-  // console.log(categorias)
+  useEffect(() => {
+    getProductos().then((respuesta) => {
+      setProductos(respuesta.productos);
+    });
+  });
 
   return (
     <div className="btn btn-categ me-2">
@@ -21,36 +19,46 @@ const BtnCategorias = () => {
       {/*Fin de Contenedor */}
       {/* ------------------ */}
       {/* Cuerpo del dropdown */}
-     
-        <div className="btn-categ-content container mt-2" >
-          {/* Categoria */}
-          <div className="row mb-3">
+
+      <div className="btn-categ-content container mt-2">
+        {/* Categoria */}
+        {productos.map((producto) => {
+          <div key={producto._id} className="row mb-3">
             <div className="btn col-7">
-              <span>Aceites</span>
+              <span>{producto.nombre}</span>
             </div>
             <div className="col-3"></div>
             <div className="btn col-2">
               <i className="fas fa-chevron-right"></i>
             </div>
-            {/* Producto */}
-            <div className="container btn-categ-content2">
-            <div className="row mb-3">
-              <div className="btn col-2">
-                <span>Aceite</span>
-              </div>
-              <div className="col-8"></div>
-              <div className="btn col-2">
-                <i className="fas fa-chevron-right"></i>
-              </div>
+          </div>;
+        })}
+
+        {/* Fin de Categoria */}
+        {/* Producto */}
+        <div className="container btn-categ-content2">
+          <div className="row mb-3">
+            <div className="btn col-2">
+              <span>Aceite</span>
+            </div>
+            <div className="col-8"></div>
+            <div className="btn col-2">
+              <i className="fas fa-chevron-right"></i>
             </div>
           </div>
+
+          <div className="row mb-3">
+            <div className="btn col-2">
+              <span>Vinagre</span>
+            </div>
+            <div className="col-8"></div>
+            <div className="btn col-2">
+              <i className="fas fa-chevron-right"></i>
+            </div>
           </div>
-          
-          {/* Fin de Categoria */}
-          {/* -------------- */}
-          
         </div>
-      
+        {/* -------------- */}
+      </div>
 
       {/* Fin Cuerpo Dropdown */}
     </div>
