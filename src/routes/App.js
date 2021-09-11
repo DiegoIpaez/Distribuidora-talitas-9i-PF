@@ -3,12 +3,12 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
 import About from "../pages/About";
+import Login from "../pages/Login"
 import Admin from "../pages/Admin";
 import Carrito from "../pages/Carrito";
 import Contact from "../pages/Contact";
 import Error404 from "../pages/Error404";
 import Home from "../pages/Home";
-import Login from "../pages/Login";
 import ProductScreen from "../pages/ProductScreen";
 import User from "../pages/User";
 

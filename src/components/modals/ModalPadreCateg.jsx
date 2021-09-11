@@ -19,7 +19,7 @@ const ModalPadreCateg = ({ show, handleClose, actualizar }) => {
     if (actualizar) {
       getCategoriaPId(actualizar).then((respuesta) => {
         setFormValue({
-          nombre: respuesta.categoria.nombre,
+          nombre: respuesta.categorias.nombre,
         });
       });
     }

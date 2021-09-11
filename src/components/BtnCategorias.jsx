@@ -1,16 +1,16 @@
 import React from "react";
-// import { getCategorias } from "../helpers/categorias"
+// import { getProductos } from "../helpers/productos"
 
 const BtnCategorias = () => {
-  // const [categorias, setCategorias] = useState([])
+  // const [productos, setProductos] = useState([])
 
   // useEffect(() => {
-  //   getCategorias().then((respuesta)=>{
-  //     setCategorias(respuesta.categorias)
+  //   getProductos().then((respuesta)=>{
+  //     setProductos(respuesta.productos)
   //   })
   // }, [])
 
-  // console.log(categorias)
+  // console.log(productos)
 
   return (
     <div className="btn btn-categ me-2">
@@ -21,19 +21,20 @@ const BtnCategorias = () => {
       {/*Fin de Contenedor */}
       {/* ------------------ */}
       {/* Cuerpo del dropdown */}
-     
-        <div className="btn-categ-content container mt-2" >
-          {/* Categoria */}
-          <div className="row mb-3">
-            <div className="btn col-7">
-              <span>Aceites</span>
-            </div>
-            <div className="col-3"></div>
-            <div className="btn col-2">
-              <i className="fas fa-chevron-right"></i>
-            </div>
-            {/* Producto */}
-            <div className="container btn-categ-content2">
+
+      <div className="btn-categ-content container mt-2">
+        {/* Categoria */}
+
+        <div className="row mb-3">
+          <div className="btn col-7">
+            <span>Aceite y vinagre</span>
+          </div>
+          <div className="col-3"></div>
+          <div className="btn col-2">
+            <i className="fas fa-chevron-right"></i>
+          </div>
+          {/* Producto */}
+          <div className="container btn-categ-content2">
             <div className="row mb-3">
               <div className="btn col-2">
                 <span>Aceite</span>
@@ -44,13 +45,11 @@ const BtnCategorias = () => {
               </div>
             </div>
           </div>
-          </div>
-          
-          {/* Fin de Categoria */}
-          {/* -------------- */}
-          
         </div>
-      
+
+        {/* Fin de Categoria */}
+        {/* -------------- */}
+      </div>
 
       {/* Fin Cuerpo Dropdown */}
     </div>

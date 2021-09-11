@@ -63,7 +63,7 @@ const ProductScreen = () => {
                 <span className="pe-3">MOLINOS</span>
                 <span>|</span>
                 <span className="ps-3 codigo-product">
-                  Código de producto: 22140120001
+                  Código de producto: {producto.data.cod_Producto}
                 </span>
                 <hr />
                 <span>Precio por unidad</span>

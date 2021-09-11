@@ -19,8 +19,8 @@ const TablePadreCateg = () => {
   useEffect(() => {
     getCategoriasP().then((respuesta) => {
       setCategoriasP({
-        datos: respuesta.categoriasP,
-        loading: true,
+        datos: respuesta.categorias,
+        loading: false,
       });
       setTotpag(respuesta.Total);
     });

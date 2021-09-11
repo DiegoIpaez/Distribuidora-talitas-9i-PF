@@ -5,6 +5,7 @@ import TableProductos from "../components/TableProductos";
 import TableUsuarios from "../components/TableUsuarios";
 
 const Admin = () => {
+
   return (
     <div className="container">
       <div className="row">
