@@ -11,6 +11,7 @@ import Error404 from "../pages/Error404";
 import Home from "../pages/Home";
 import ProductScreen from "../pages/ProductScreen";
 import User from "../pages/User";
+import ProtectedRoutes from "../helpers/ProtectedRoutes"
 
 const App = () => {
   return (
@@ -21,10 +22,10 @@ const App = () => {
         <Route exact path="/login" component={Login} />
         <Route exact path="/about" component={About} />
         <Route exact path="/contact" component={Contact} />
-        <Route exact path="/product/:id" component={ProductScreen} />
-        <Route exact path="/carrito" component={Carrito} />
-        <Route exact path="/admin" component={Admin} />
-        <Route exact path="/user" component={User} />
+        <ProtectedRoutes exact path="/product/:id" component={ProductScreen} />
+        <ProtectedRoutes exact path="/carrito" component={Carrito} />
+        <ProtectedRoutes exact path="/admin" component={Admin} />
+        <ProtectedRoutes exact path="/user" component={User} />
         <Route component={Error404} />
       </Switch>
       <Footer />

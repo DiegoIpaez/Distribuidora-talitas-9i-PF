@@ -13,6 +13,21 @@ import BtnCategorias from "./BtnCategorias";
 
 const NavBar = () => {
   const history = useHistory();
+
+  // const [usuario, setUsuario] = useState(null)
+
+  // useEffect(() => {
+  //   const data = JSON.parse(localStorage.getItem("auth"))
+  //   setUsuario(data.usuario)
+  // }, [])
+
+  // console.log(usuario)
+
+  const logout = () => {
+    localStorage.clear();
+    history.push("/login");
+  };
+
   return (
     <Navbar collapseOnSelect expand="lg" className="navbar">
       <Container>
@@ -74,12 +89,7 @@ const NavBar = () => {
                   </Link>
                 </Dropdown.Item>
                 <Dropdown.Divider />
-                <Dropdown.Item
-                  onClick={() => {
-                    localStorage.removeItem("crypto_app_user");
-                    history.push("/login");
-                  }}
-                >
+                <Dropdown.Item onClick={logout}>
                   <span className="nav-link">
                     <i className="fas fa-sign-out-alt"></i> Salir
                   </span>
