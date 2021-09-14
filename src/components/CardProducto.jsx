@@ -23,7 +23,7 @@ const CardProducto = ({ productos }) => {
               <span className="marcaText ps-3 pe-3 pb-1">molinos</span>
             </h6>
             <h6 className="precio-producto mt-3 pe-1">${producto.precio}</h6>
-            <Link to={`/product/${producto._id}`}>
+            <Link to="/carrito">
               <button className="btn btn-compra pe-5 ps-5 mb-3 mt-1">
                 <i className="fas fa-shopping-cart"></i> AGREGAR
               </button>

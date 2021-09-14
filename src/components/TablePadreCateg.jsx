@@ -11,6 +11,7 @@ const TablePadreCateg = () => {
     loading: true,
   });
 
+
   const [pagina, setPagina] = useState(0);
   const [totPag, setTotpag] = useState(0);
 

@@ -2,13 +2,12 @@ import React, { useEffect, useState } from "react";
 import { Form } from "react-bootstrap";
 
 const UserDatos = () => {
-  const [usuario, setUsuario] = useState([])
+  const [usuario, setUsuario] = useState([]);
 
   useEffect(() => {
-    const dataU = JSON.parse(localStorage.getItem("auth"))
-    setUsuario(dataU.usuario)
-    console.log(dataU.usuario)
-  }, [])
+    const dataU = JSON.parse(localStorage.getItem("auth"));
+    setUsuario(dataU.usuario);
+  }, []);
 
   return (
     <div className="container mt-5 UserBoxData pt-4 pb-4">
@@ -26,7 +25,7 @@ const UserDatos = () => {
             {" "}
             <Form.Group className="mb-3" controlId="formBasicPassword">
               <Form.Label>Apellido</Form.Label>
-              <Form.Control type="name"  />
+              <Form.Control type="name" />
             </Form.Group>
           </div>
         </div>

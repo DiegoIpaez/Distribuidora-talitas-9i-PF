@@ -12,6 +12,8 @@ const ModalPadreCateg = ({ show, handleClose, actualizar }) => {
     nombre: "",
   });
 
+  console.log(actualizar)
+
   useEffect(() => {
     setFormValue({
       nombre: "",
@@ -86,7 +88,7 @@ const ModalPadreCateg = ({ show, handleClose, actualizar }) => {
                 placeholder="Ej: Bebidas saborizadas"
                 required
                 value={formValue.nombre}
-                onChange={handleChange}
+                onChange={handleChange} 
               />
             </div>
           </Modal.Body>
