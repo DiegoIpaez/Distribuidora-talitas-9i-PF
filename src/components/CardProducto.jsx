@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const CardProducto = ({ producto, productos, cart, setCart }) => {
-  let { _id, nombre, precio } = producto;
+  let { _id, nombre, precio, image } = producto;
 
   // Funcion para agregar los productos al carrito
   const addCart = (_id) => {
@@ -22,11 +22,7 @@ const CardProducto = ({ producto, productos, cart, setCart }) => {
         <div className="col-lg-3 col-md-6 col-12 mb-3  mt-2">
           <div className="text-center Producto">
             <Link to={`/product/${_id}`}>
-              <img
-                className="img-producto mb-4 mt-4"
-                src="https://plazavea.vteximg.com.br/arquivos/ids/561697/20190288.jpg?v=637427440868130000"
-                alt=""
-              />
+              <img className="img-producto mb-4 mt-4" src={image} alt="" />
             </Link>
             <h6 className="titleProduct mb-3">
               <Link to={`/product/${_id}`} className="nameProducto">
@@ -52,7 +48,7 @@ const CardProducto = ({ producto, productos, cart, setCart }) => {
           <div className="col-md-2 col-6 pt-3 pb-3 ">
             <img
               className="img-carrito pt-1 pb-1"
-              src="https://plazavea.vteximg.com.br/arquivos/ids/561697/20190288.jpg?v=637427440868130000"
+              src={image}
               alt=""
             />
           </div>

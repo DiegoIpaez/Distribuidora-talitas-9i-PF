@@ -1,8 +1,9 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { getBuscar } from "../helpers/buscador";
 
 const BarraBusqueda = () => {
-  const coleccion = ["categorias"];
+  const coleccion = ["productos"];
 
   const [buscador, setBuscador] = useState({
     datos: [],
@@ -25,45 +26,46 @@ const BarraBusqueda = () => {
 
       getBuscar(coleccion, inputValue).then((respuesta) => {
         setBuscador({
-          datos: respuesta.results,
+          datos: respuesta.results.productos,
           loading: false,
         });
+        console.log(buscador.datos);
       });
       setInputValue("");
     }
   };
-  
-
-  console.log(buscador);
 
   return (
-    <div className="container">
-      <div className="row">
-        <div className="col col-md-6 offset-md-3">
-          <form onSubmit={submitSearch}>
-            <div className="form-group">
-              <input
-                type="text"
-                className="form-control"
-                placeholder="Search..."
-                value={inputValue}
-                onChange={changeInput}
-              />
-            </div>
-          </form>
+    <>
+      <form onSubmit={submitSearch}>
+        <div className="form-group mb-2">
+          <input
+            type="text"
+            className="form-control"
+            placeholder="buscar..."
+            value={inputValue}
+            onChange={changeInput}
+          />
         </div>
-      </div>
-      <div className="row mt-5">
-        <div className="col col-md-8 offset-md-2">
-        {buscador.loading ? (
-            <h3 className="text-white text-center mb-5">Cargando...</h3>
-          ): <span>busqueda:{buscador.datos.categorias.nombre}</span>
-          }
-         
-          
-        </div>
-      </div>
-    </div>
+      </form>
+
+      {buscador.loading ? (
+        <h3 className="text-white text-center mb-5">Cargando...</h3>
+      ) : buscador.datos.length > 0 ? (
+        <ul>
+          {buscador.datos.map((productoB) => (
+            <li className="busquedaL" key={productoB._id}>
+              <Link className="nav-link" to={`/product/${productoB._id}`}>
+                {productoB.nombre}
+              </Link>
+              <hr />
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <span>producto no encontrado</span>
+      )}
+    </>
   );
 };
 

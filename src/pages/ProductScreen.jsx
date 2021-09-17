@@ -50,7 +50,7 @@ const ProductScreen = () => {
           <div className="col">
             <img
               className="img-id mb-4 pt-4 pb-4"
-              src="https://plazavea.vteximg.com.br/arquivos/ids/561697/20190288.jpg?v=637427440868130000"
+              src={producto.data.image}
               alt=""
             />
           </div>

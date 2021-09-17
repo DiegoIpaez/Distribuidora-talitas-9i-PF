@@ -9,6 +9,8 @@ const TablaCarrito = () => {
     loading: true,
   });
 
+  console.log(carrito)
+
   const [pagina, setPagina] = useState(0);
   const [totPag, setTotpag] = useState(0);
 

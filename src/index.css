@@ -93,6 +93,18 @@ code {
 /* Fin de BOTON CATEGORIA */
 /* --------------------------------------------- */
 
+/* BUSCADOR */
+.busquedaL{
+  text-decoration: none;
+  list-style:none;
+  width: 18vw;
+}
+/* BUSCADOR */
+
+
+/* --------------------------------------------- */
+
+
 .iconos-nav {
   color: rgb(170, 170, 170);
 }
@@ -429,6 +441,5 @@ footer {
 -webkit-box-shadow: -1px 1px 13px 5px rgba(29,29,29,0.6);
 -moz-box-shadow: -1px 1px 13px 5px rgba(29,29,29,0.6);
 }
-
 
 /* Fin de Modal Regis */

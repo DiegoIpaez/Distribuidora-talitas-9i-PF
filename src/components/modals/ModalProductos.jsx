@@ -15,6 +15,8 @@ const ModalProductos = ({ show, handleClose, actualizar }) => {
   const [formValue, setFormValue] = useState({
     nombre: "",
     precio: "",
+    Unidad: "",
+    image: "",
     descripcion: "",
     cod_Producto: "",
     cod_Barras: "",
@@ -37,6 +39,8 @@ const ModalProductos = ({ show, handleClose, actualizar }) => {
     setFormValue({
       nombre: "",
       precio: "",
+      Unidad: "",
+      image: "",
       descripcion: "",
       cod_Producto: "",
       cod_Barras: "",
@@ -53,6 +57,8 @@ const ModalProductos = ({ show, handleClose, actualizar }) => {
         setFormValue({
           nombre: respuesta.producto.nombre,
           precio: respuesta.producto.precio,
+          Unidad: respuesta.producto.Unidad,
+          image: respuesta.producto.image,
           descripcion: respuesta.producto.descripcion,
           cod_Producto: respuesta.producto.cod_Producto,
           cod_Barras: respuesta.producto.cod_Barras,
@@ -100,6 +106,8 @@ const ModalProductos = ({ show, handleClose, actualizar }) => {
         setFormValue({
           nombre: "",
           precio: "",
+          Unidad: "",
+          image: "",
           cod_Producto: "",
           cod_Barras: "",
           Ganancia: "",
@@ -126,6 +134,8 @@ const ModalProductos = ({ show, handleClose, actualizar }) => {
         setFormValue({
           nombre: "",
           precio: "",
+          Unidad: "",
+          image: "",
           cod_Producto: "",
           cod_Barras: "",
           Ganancia: "",
@@ -175,6 +185,16 @@ const ModalProductos = ({ show, handleClose, actualizar }) => {
               />
             </div>
             <div className="form-group">
+              <label>Unidad</label>
+              <input
+                type="number"
+                name="Unidad"
+                className="form-control"
+                value={formValue.Unidad}
+                onChange={handleChange}
+              />
+            </div>
+            <div className="form-group">
               <label>Codigo de Producto</label>
               <input
                 type="number"
@@ -191,6 +211,18 @@ const ModalProductos = ({ show, handleClose, actualizar }) => {
                 name="cod_Barras"
                 className="form-control"
                 value={formValue.cod_Barras}
+                onChange={handleChange}
+              />
+            </div>
+            <div className="form-group">
+              <label>Imagen(Url)</label>
+              <input
+                type="text"
+                name="image"
+                className="form-control"
+                placeholder="http:www.image.com"
+                required
+                value={formValue.image}
                 onChange={handleChange}
               />
             </div>
