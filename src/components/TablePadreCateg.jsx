@@ -11,7 +11,6 @@ const TablePadreCateg = () => {
     loading: true,
   });
 
-
   const [pagina, setPagina] = useState(0);
   const [totPag, setTotpag] = useState(0);
 
@@ -20,12 +19,14 @@ const TablePadreCateg = () => {
   useEffect(() => {
     getCategoriasP().then((respuesta) => {
       setCategoriasP({
-        datos: respuesta.categorias,
+        datos: respuesta.categoriasP,
         loading: false,
       });
+
       setTotpag(respuesta.Total);
     });
   }, []);
+
 
   useEffect(() => {
     updateDatos(pagina);
@@ -39,20 +40,20 @@ const TablePadreCateg = () => {
   const updateDatos = (pag) => {
     getCategoriasP(pag).then((respuesta) => {
       setCategoriasP({
-        datos: respuesta.categorias,
+        datos: respuesta.categoriasP,
         loading: false,
       });
     });
   };
 
   //---------------------------
-  const borrarCategoria = (uid) => {
-    let categ = categoriasP.datos.find((categoriaP) => {
+  const borrarCategoriaP = (uid) => {
+    let categP = categoriasP.datos.find((categoriaP) => {
       return categoriaP._id === uid;
     });
 
     let validar = window.confirm(
-      `Esta seguro que quiere inactivar ${categ.nombre} de categorías?`
+      `Esta seguro que quiere inactivar ${categP.nombre} de categorías?`
     );
     if (validar) {
       deleteCategoriaP(uid).then((respuesta) => {
@@ -110,7 +111,7 @@ const TablePadreCateg = () => {
           <div className="col-md-1 col-2 mt-1">
             <button
               className="btn btn-danger"
-              onClick={() => borrarCategoria(categoriaP._id)}
+              onClick={() => borrarCategoriaP(categoriaP._id)}
             >
               <i className="fas fa-trash-alt"></i>
             </button>

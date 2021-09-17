@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { getCarrito, deleteCarrito } from "../helpers/carrito";
+import { getCarrito } from "../helpers/carrito";
 import BtnPaginacion from "./BtnPaginacion";
 import ModalCarrito from "./modals/ModalCarrito";
 
@@ -9,26 +9,25 @@ const TablaCarrito = () => {
     loading: true,
   });
 
-    const [pagina, setPagina] = useState(0);
-    const [totPag, setTotpag] = useState(0);
+  const [pagina, setPagina] = useState(0);
+  const [totPag, setTotpag] = useState(0);
 
-    const [show, setShow] = useState(false);
+  const [show, setShow] = useState(false);
 
   useEffect(() => {
     getCarrito().then((respuesta) => {
       setCarrito({
-        datos: respuesta.CarritoListo,
+        datos: respuesta.producto,
         loading: false,
       });
       setTotpag(respuesta.Total);
     });
   }, []);
 
-  console.log(carrito)
 
   useEffect(() => {
     updateDatos(pagina);
-  }, [pagina,show]);
+  }, [pagina, show]);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -38,7 +37,7 @@ const TablaCarrito = () => {
   const updateDatos = (pag) => {
     getCarrito(pag).then((respuesta) => {
       setCarrito({
-        datos: respuesta.CarritoListo,
+        datos: respuesta.producto,
         loading: false,
       });
     });
@@ -46,24 +45,24 @@ const TablaCarrito = () => {
 
   //   --------------------------------------
 
-  const borrarCarrito = (uid) => {
-    const carrit = carrito.datos.find((carri) => {
-      return carri._id === uid;
-    });
+  // const borrarCarrito = (uid) => {
+  //   const carrit = carrito.datos.find((carri) => {
+  //     return carri._id === uid;
+  //   });
 
-    let validar = window.confirm(
-      `Esta seguro que quiere inactivar el pedido ${carrit._id}`
-    );
+  //   let validar = window.confirm(
+  //     `Esta seguro que quiere inactivar el pedido ${carrit._id}`
+  //   );
 
-    if (validar) {
-      deleteCarrito(uid).then((respuesta) => {
-        if (respuesta.msg) {
-          window.alert(respuesta.msg);
-        }
-        updateDatos(pagina);
-      });
-    }
-  };
+  //   if (validar) {
+  //     deleteCarrito(uid).then((respuesta) => {
+  //       if (respuesta.msg) {
+  //         window.alert(respuesta.msg);
+  //       }
+  //       updateDatos(pagina);
+  //     });
+  //   }
+  // };
 
   return (
     <div className="container">
@@ -90,9 +89,9 @@ const TablaCarrito = () => {
           <div className="col-md-5 col-4 mt-2">{carrit._id}</div>
           <div className="col-md-5 col-6 mt-2">{carrit.usuario.email}</div>
           <div className="col-md-2 col-2 mt-1 text-center">
-            <button className="btn btn-danger" onClick={() => borrarCarrito(carrit._id)}>
+            {/* <button className="btn btn-danger" onClick={() => borrarCarrito(carrit._id)}>
               <i className="fas fa-trash-alt"></i>
-            </button>
+            </button> */}
           </div>
           <hr className="mt-1" />
         </div>

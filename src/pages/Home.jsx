@@ -1,11 +1,18 @@
 import React, { useEffect, useState } from "react";
 import { getProductos } from "../helpers/productos";
+import {useLocalStorage} from "../helpers/localStorageCart"
 import Carrusel from "../components/Carrusel";
 import CardProducto from "../components/CardProducto";
 import BtnPaginacion from "../components/BtnPaginacion";
 
 const Home = () => {
+
+   // Estado del carrito
+   const [cart, setCart] = useLocalStorage("carrito",[])
+
+  //Estado de los productos
   const [productos, setProductos] = useState([]);
+  // Estados de los botones
   const [pagina, setPagina] = useState(0);
   const [totPag, setTotPag] = useState(0);
 
@@ -33,7 +40,16 @@ const Home = () => {
             ¡Productos destacados!
           </h2>
         </div>
-        <CardProducto productos={productos} />
+        <div className="row">
+        {productos.map((producto) => (
+                  <CardProducto
+                    key={producto._id}
+                    producto={producto}
+                    cart={cart}
+                    setCart={setCart}
+                    productos={productos}
+                  />
+                ))}</div>
 
         <div className="text-center">
           <BtnPaginacion

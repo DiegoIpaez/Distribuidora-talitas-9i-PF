@@ -1,12 +1,12 @@
 import React from "react";
 import BarraBusqueda from "../components/BarraBusqueda";
 
-const About = () => {
+const BusquedaTest  = () => {
   return (
     <div className="container">
       <div className="row">
         <div className="col mt-5">
-          <h1>About</h1>
+          <h1>BusquedaTest</h1>
           <BarraBusqueda />
         </div>
       </div>
@@ -14,4 +14,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default BusquedaTest;
