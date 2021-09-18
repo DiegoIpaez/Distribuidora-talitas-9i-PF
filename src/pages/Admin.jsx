@@ -1,6 +1,4 @@
 import React from "react";
-import { useState } from "react";
-import { useEffect } from "react";
 import TablePadreCateg from "../components/TablePadreCateg";
 import TableCategorias from "../components/TableCategorias";
 import TableProductos from "../components/TableProductos";
