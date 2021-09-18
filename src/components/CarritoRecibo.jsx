@@ -1,21 +1,32 @@
 import React, { useState } from "react";
-// import { postCarrito } from "../helpers/carrito";
+import { postCarrito } from "../helpers/carrito";
 
 const CarritoRecibo = ({ cart }) => {
-  // const [pedidos, setPedidos] = useState({
-  //   item: "",
-  // });
+  const ncantidad = Object.values(cart).reduce(
+    (acc, { precio, Unidad }) => acc + precio * Unidad,
+    0
+  );
 
-  // const añadirCart = () => {
-  //   postCarrito(pedidos).then((respuesta) => {
-  //     if (respuesta.msg) {
-  //       window.alert(respuesta.msg);
-  //     }
-  //     setPedidos({
-  //       item: cart[0]._id,
-  //     });
-  //   });
-  // };
+  //  console.log(ncantidad)
+
+  const [loading, setLoading] = useState(false);
+  const [pedidos, setPedidos] = useState({
+    item: "",
+  });
+
+  const añadirCart = (data) => {
+    setLoading(true);
+    postCarrito(pedidos).then((respuesta) => {
+      if (respuesta.errors) {
+        setLoading(false);
+        return window.alert(respuesta.errors[0].msg);
+      }
+      setLoading(false);
+      setPedidos({
+        item: cart[0]._id,
+      });
+    });
+  };
   // console.log(pedidos);
   return (
     <>
@@ -26,20 +37,28 @@ const CarritoRecibo = ({ cart }) => {
           {cart.map((producto) => (
             <div className="row" key={producto._id}>
               <div className="col-9">
-                <span className="me-4">{producto.nombre} x1</span>
+                <span className="me-4">
+                  {producto.nombre} x{producto.Unidad}
+                </span>
               </div>
               <div className="col-3">
-                <span>${producto.precio}</span>
+                <span>${`${producto.precio * producto.Unidad}`}</span>
               </div>
             </div>
           ))}
         </div>
         <div className="col-md-8 mt-2">
-          <h4>Total: </h4>
+          <h4>Total: ${ncantidad} </h4>
         </div>
 
         <div className="text-center">
-          <button className="btn btn-pedidoF mt-3">
+          <button
+            className="btn btn-pedidoF mt-3"
+            disabled={loading}
+            onClick={() => {
+              añadirCart();
+            }}
+          >
             <i className="fas fa-shopping-cart "></i>
             <span> Finalizar pedido</span>
           </button>
