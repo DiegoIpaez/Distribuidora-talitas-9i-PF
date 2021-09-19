@@ -36,9 +36,9 @@ const BarraBusqueda = () => {
   };
 
   return (
-    <>
+    <div className="busquedaC">
       <form onSubmit={submitSearch}>
-        <div className="form-group mb-2">
+        <div className="form-group mb-1">
           <input
             type="text"
             className="form-control"
@@ -47,26 +47,33 @@ const BarraBusqueda = () => {
             onChange={changeInput}
           />
         </div>
-        
       </form>
 
       {buscador.loading ? (
-        <h3 className="text-white text-center mb-5">Cargando...</h3>
+        <ul className="busquedaL">
+          <li className="pt-2 pb-2 pe-5">
+            <span className="pe-5">Cargando...</span>
+          </li>
+        </ul>
       ) : buscador.datos.length > 0 ? (
-        <ul>
+        <ul className="busquedaL">
           {buscador.datos.map((productoB) => (
-            <li className="busquedaL" key={productoB._id}>
+            <li className="pe-5" key={productoB._id}>
               <Link className="nav-link" to={`/product/${productoB._id}`}>
-                {productoB.nombre}
+                <h8>{productoB.nombre}</h8>
               </Link>
-              <hr />
             </li>
           ))}
         </ul>
       ) : (
-        <span>producto no encontrado...</span>
+        <ul className="busquedaL">
+          <li className="pt-2 pb-2 pe-4">
+            {" "}
+            <span >Producto no encontrado...</span>
+          </li>
+        </ul>
       )}
-    </>
+    </div>
   );
 };
 

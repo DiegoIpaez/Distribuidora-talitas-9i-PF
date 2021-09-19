@@ -9,7 +9,7 @@ const TablaCarrito = () => {
     loading: true,
   });
 
-  console.log(carrito)
+  // console.log(carrito)
 
   const [pagina, setPagina] = useState(0);
   const [totPag, setTotpag] = useState(0);
@@ -87,7 +87,7 @@ const TablaCarrito = () => {
       {/* ------------------------------ */}
       {/* Cuerpo tabla */}
       {carrito.datos.map((carrit) => (
-        <div className="row" key={carrit._id}>
+        <div className="row mt-2" key={carrit._id}>
           <div className="col-md-5 col-4 mt-2">{carrit._id}</div>
           <div className="col-md-5 col-6 mt-2">{carrit.usuario.email}</div>
           <div className="col-md-2 col-2 mt-1 text-center">
@@ -95,7 +95,7 @@ const TablaCarrito = () => {
               <i className="fas fa-trash-alt"></i>
             </button> */}
           </div>
-          <hr className="mt-1" />
+          <hr className="mt-2" />
         </div>
       ))}
 

@@ -29,7 +29,7 @@ const UserDatos = () => {
             </Form.Group>
           </div>
         </div>
-        <div className="row">
+        {/* <div className="row">
           <div className="col-md-4">
             <Form.Group className="mb-3" controlId="formBasic">
               <Form.Label>Fecha de Nac.</Form.Label>
@@ -48,8 +48,8 @@ const UserDatos = () => {
               <Form.Control type="phone" placeholder="3816136233" />
             </Form.Group>
           </div>
-        </div>
-        <div className="row">
+        </div> */}
+        {/* <div className="row">
           <div className="col-md-6">
             <Form.Group className="mb-3" controlId="formBasic3">
               <Form.Label>Tipo de Documento</Form.Label>
@@ -62,7 +62,7 @@ const UserDatos = () => {
               <Form.Control type="text" placeholder="42156746" />
             </Form.Group>
           </div>
-        </div>
+        </div> */}
 
         <Form.Group className="mb-3" controlId="formBasic5">
           <Form.Label>Email</Form.Label>

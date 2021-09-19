@@ -95,9 +95,17 @@ code {
 
 /* BUSCADOR */
 .busquedaL{
+  z-index: 1;
+  
+  position: absolute;
+  background-color: #f6f6f6;
   text-decoration: none;
   list-style:none;
-  width: 18vw;
+  font-size: 15px;
+ 
+  box-shadow: 1px 8px 16px 0px rgba(0,0,0,0.24);
+-webkit-box-shadow: 1px 8px 16px 0px rgba(0,0,0,0.24);
+-moz-box-shadow: 1px 8px 16px 0px rgba(0,0,0,0.24);
 }
 /* BUSCADOR */
 
