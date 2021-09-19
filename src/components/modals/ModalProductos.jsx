@@ -155,7 +155,7 @@ const ModalProductos = ({ show, handleClose, actualizar }) => {
   return (
     <div>
       <Modal show={show} onHide={handleClose} centered>
-        <Modal.Header closeButton>
+        <Modal.Header className="tituloModal" closeButton>
           <Modal.Title>
             {actualizar ? "Modificar producto" : "Nuevo producto"}
           </Modal.Title>
@@ -316,11 +316,11 @@ const ModalProductos = ({ show, handleClose, actualizar }) => {
             </div>
           </Modal.Body>
           <Modal.Footer>
-            <Button variant="secondary" onClick={handleClose}>
-              Close
+            <Button variant="danger" onClick={handleClose}>
+              Cancelar
             </Button>
             <Button variant="success" type="submit" disabled={loading}>
-              Save Changes
+              Guardar cambios
             </Button>
           </Modal.Footer>
         </form>

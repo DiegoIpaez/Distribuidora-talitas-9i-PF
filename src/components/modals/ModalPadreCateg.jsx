@@ -72,8 +72,8 @@ const ModalPadreCateg = ({ show, handleClose, actualizar }) => {
   return (
     <div>
       <Modal show={show} onHide={handleClose} centered>
-        <Modal.Header closeButton>
-          <Modal.Title>Nueva Categoria Padre</Modal.Title>
+        <Modal.Header className="tituloModal">
+          <Modal.Title>{actualizar ? "Modificar Categoria Padre" : "Nueva Categoria Padre"}</Modal.Title>
         </Modal.Header>
         <form onSubmit={handleSubmit}>
           <Modal.Body>
@@ -91,11 +91,11 @@ const ModalPadreCateg = ({ show, handleClose, actualizar }) => {
             </div>
           </Modal.Body>
           <Modal.Footer>
-            <Button variant="secondary" onClick={handleClose}>
-              Close
+            <Button variant="danger" onClick={handleClose}>
+              Cancelar
             </Button>
             <Button variant="success" type="submit" disabled={loading}>
-              Save Changes
+              Guardar cambios
             </Button>
           </Modal.Footer>
         </form>

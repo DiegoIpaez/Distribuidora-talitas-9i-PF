@@ -75,8 +75,8 @@ const ModalCategorias = ({ show, handleClose, actualizar }) => {
   return (
     <div>
       <Modal show={show} onHide={handleClose} centered>
-        <Modal.Header closeButton>
-          <Modal.Title>Nueva categoria</Modal.Title>
+        <Modal.Header className="tituloModal">
+          <Modal.Title>{actualizar ? "Modificar Categoria" : "Nueva Categoria"}</Modal.Title>
         </Modal.Header>
         <form onSubmit={handleSubmit}>
           <Modal.Body>
@@ -86,7 +86,7 @@ const ModalCategorias = ({ show, handleClose, actualizar }) => {
                 type="text"
                 name="nombre"
                 className="form-control"
-                placeholder="Ej: Bebidas saborizadas"
+                placeholder="Ej: Fideos"
                 required
                 value={formValue.nombre}
                 onChange={handleChange}
@@ -94,11 +94,11 @@ const ModalCategorias = ({ show, handleClose, actualizar }) => {
             </div>
           </Modal.Body>
           <Modal.Footer>
-            <Button variant="secondary" onClick={handleClose}>
-              Close
+            <Button variant="danger" onClick={handleClose}>
+              Cancelar
             </Button>
             <Button variant="success" type="submit" disabled={loading}>
-              Save Changes
+              Guardar Cambios
             </Button>
           </Modal.Footer>
         </form>

@@ -45,8 +45,8 @@ const ModalCarrito = ({ show, handleClose }) => {
   return (
     <div>
       <Modal show={show} onHide={handleClose} centered>
-        <Modal.Header closeButton>
-          <Modal.Title>Alta de Usuario</Modal.Title>
+        <Modal.Header className="tituloModal">
+          <Modal.Title>Prueba pedido</Modal.Title>
         </Modal.Header>
         <form onSubmit={handleSubmit}>
           <Modal.Body>
@@ -82,11 +82,11 @@ const ModalCarrito = ({ show, handleClose }) => {
             </div>
           </Modal.Body>
           <Modal.Footer>
-            <Button variant="secondary" onClick={handleClose}>
-              Close
+            <Button className="d-grid gap-2"  variant="danger" onClick={handleClose} >
+              Cancelar
             </Button>
             <Button variant="success" type="submit" disabled={loading}>
-              Save Changes
+              Guardar cambios
             </Button>
           </Modal.Footer>
         </form>
