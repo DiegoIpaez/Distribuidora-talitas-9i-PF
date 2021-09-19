@@ -47,6 +47,7 @@ const BarraBusqueda = () => {
             onChange={changeInput}
           />
         </div>
+        
       </form>
 
       {buscador.loading ? (
@@ -63,7 +64,7 @@ const BarraBusqueda = () => {
           ))}
         </ul>
       ) : (
-        <span>producto no encontrado</span>
+        <span>producto no encontrado...</span>
       )}
     </>
   );

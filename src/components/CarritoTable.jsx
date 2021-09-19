@@ -1,21 +1,36 @@
 import React from "react";
-// import CardProducto from "./CardProducto";
 
 const CarritoTable = ({ cart, setCart }) => {
-  // // Funcion para agregar los productos al carrito
-  // const addCart = (_id) => {
-  //   const producto = productos.filter((producto) => producto._id === _id);
-  //   setCart([...cart, ...producto]);
-  // };
+  // // Funcion para agregar los productos al carrito y sumar las cantidades
+  const addCart = (_id) => {
+    const producto = cart.find((producto) => producto._id === _id);
+    if (producto) {
+      setCart(
+        cart.map((product) =>
+          product._id === _id
+            ? { ...producto, Unidad: producto.Unidad + 1 }
+            : product
+        )
+      );
+    } else {
+      setCart([...cart, { ..._id, Unidad: 1 }]);
+    }
+  };
 
-  // Funcion para aumentar la cantidad
-  const addUnidad = (_id) => {
-    const Cantidad = cart.map((producto) =>
-      producto._id === _id
-        ? { ...producto, Unidad: producto.Unidad + 1 }
-        : producto
-    );
-    setCart([...cart, ...Cantidad]);
+  //Funcion para reducir las cantidades
+  const removeItem = (_id) => {
+    const producto = cart.find((producto) => producto._id === _id);
+    if (producto.Unidad === 1) {
+      setCart(cart.filter((producto) => producto._id !== _id));
+    } else {
+      setCart(
+        cart.map((product) =>
+          product._id === _id
+            ? { ...producto, Unidad: producto.Unidad - 1 }
+            : product
+        )
+      );
+    }
   };
 
   //Funcion para eliminar el producto
@@ -34,7 +49,7 @@ const CarritoTable = ({ cart, setCart }) => {
         </div>
       ) : (
         cart.map((producto) => (
-          <div className="row ">
+          <div className="row" key={producto._id}>
             <div className="col-md-2 col-6 pt-3 pb-3 ">
               <img
                 className="img-carrito pt-1 pb-1"
@@ -57,13 +72,16 @@ const CarritoTable = ({ cart, setCart }) => {
             {/* Cantidades */}
 
             <div className="col-md-4 col-12 pt-4 mt-3 pb-3 text-center">
-              <button className="btn btn-cantidad me-4">
+              <button
+                className="btn btn-cantidad me-4"
+                onClick={() => removeItem(producto._id)}
+              >
                 <b>-</b>
               </button>
               <span>{producto.Unidad}</span>
               <button
                 className="btn btn-cantidad  ms-4"
-                onClick={() => addUnidad(producto._id)}
+                onClick={() => addCart(producto._id)}
               >
                 <b>+</b>
               </button>

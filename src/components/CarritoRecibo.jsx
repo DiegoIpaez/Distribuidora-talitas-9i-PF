@@ -2,32 +2,31 @@ import React, { useState } from "react";
 import { postCarrito } from "../helpers/carrito";
 
 const CarritoRecibo = ({ cart }) => {
+  // Funcion para subir los productos a la BD
+  const [pedidos, setPedidos] = useState([]); 
+
+  // useEffect(() => {
+  //   setPedidos({cart})
+  // }, [])
+
+  const añadirCart = () => {
+    postCarrito(pedidos).then((respuesta) => {
+      if (respuesta.errors) {
+        return window.alert(respuesta.errors[0].msg);
+      }
+      setPedidos(respuesta);
+    });
+  };
+
+  // -----------------------------------------------------------------------
+
+  // Funcion para el total del Carrito
   const ncantidad = Object.values(cart).reduce(
     (acc, { precio, Unidad }) => acc + precio * Unidad,
     0
   );
-
-  //  console.log(ncantidad)
-
-  const [loading, setLoading] = useState(false);
-  const [pedidos, setPedidos] = useState({
-    item: "",
-  });
-
-  const añadirCart = (data) => {
-    setLoading(true);
-    postCarrito(pedidos).then((respuesta) => {
-      if (respuesta.errors) {
-        setLoading(false);
-        return window.alert(respuesta.errors[0].msg);
-      }
-      setLoading(false);
-      setPedidos({
-        item: cart[0]._id,
-      });
-    });
-  };
   // console.log(pedidos);
+
   return (
     <>
       <div className="row pagarBox pt-4 pb-4">
@@ -54,7 +53,6 @@ const CarritoRecibo = ({ cart }) => {
         <div className="text-center">
           <button
             className="btn btn-pedidoF mt-3"
-            disabled={loading}
             onClick={() => {
               añadirCart();
             }}

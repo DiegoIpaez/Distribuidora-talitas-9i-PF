@@ -32,7 +32,7 @@ const ModalCategorias = ({ show, handleClose, actualizar }) => {
     });
   };
 
-  console.log(formValue)
+
 
   const handleSubmit = (e) => {
     e.preventDefault();

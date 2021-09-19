@@ -19,7 +19,6 @@ const ProductScreen = () => {
     });
   }, [id]);
 
-  console.log(producto);
 
   return (
     <div className="container mt-4">
@@ -37,10 +36,10 @@ const ProductScreen = () => {
             </Link>
           </span>
           <span>|</span>
-          <span className="ps-4 pe-4">
-            <Link className="atajos-text">
+          <span className="ps-4 pe-4 atajos-text">
+           
               {producto.data.nombre}
-            </Link>
+            
           </span>
         </div>
       </div>

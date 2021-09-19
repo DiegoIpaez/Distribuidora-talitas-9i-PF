@@ -6,25 +6,19 @@ const CardProducto = ({ producto, productos, cart, setCart }) => {
 
   // Funcion para agregar los productos al carrito
   const addCart = (_id) => {
-    const producto = productos.filter((producto) => producto._id === _id);
-    setCart([...cart, ...producto]);
+    const producto = cart.find((producto) => producto._id === _id);
+    if (producto) {
+      setCart(
+        cart.map((product) =>
+          product._id === _id
+            ? { ...producto, Unidad: producto.Unidad + 1 }
+            : product
+        )
+      );
+    } else {
+      setCart([...cart, { ..._id, Unidad: 1 }]);
+    }
   };
-
-  // // Funcion para aumentar la cantidad
-  // const addUnidad = (_id) => {
-  //   const Cantidad = cart.map((producto) =>
-  //     producto._id === _id
-  //       ? { ...producto, Unidad: producto.Unidad + 1 }
-  //       : producto
-  //   );
-  //   setCart([...cart, ...Cantidad]);
-  // };
-
-  // //Funcion para eliminar el producto
-  // const delCart = (_id) => {
-  //   const productos = cart.filter((producto) => producto._id !== _id);
-  //   setCart(productos);
-  // };
 
   return (
     <>
@@ -42,14 +36,13 @@ const CardProducto = ({ producto, productos, cart, setCart }) => {
             <span className="marcaText ps-3 pe-3 pb-1">molinos</span>
           </h6>
           <h6 className="precio-producto mt-3 pe-1">${precio}</h6>
-          <Link>
-            <button
-              className="btn btn-compra pe-5 ps-5 mb-3 mt-1"
-              onClick={() => addCart(_id)}
-            >
-              <i className="fas fa-shopping-cart"></i> AGREGAR
-            </button>
-          </Link>
+
+          <button
+            className="btn btn-compra pe-5 ps-5 mb-3 mt-1"
+            onClick={() => addCart(producto)}
+          >
+            <i className="fas fa-shopping-cart"></i> AGREGAR
+          </button>
         </div>
       </div>
     </>

@@ -16,7 +16,7 @@ const Carrito = () => {
   // Estado del carrito
   const [cart, setCart] = useLocalStorage("carrito", []);
 
-  console.log(cart);
+  
 
   return (
     <div className="container mt-5 ">
