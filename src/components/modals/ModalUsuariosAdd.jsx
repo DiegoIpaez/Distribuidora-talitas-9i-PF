@@ -42,7 +42,7 @@ const ModalUsuarioAdd = ({ show, handleClose }) => {
   return (
     <div>
       <Modal show={show} onHide={handleClose} centered>
-        <Modal.Header closeButton>
+        <Modal.Header className="tituloModal">
           <Modal.Title>Alta de Usuario</Modal.Title>
         </Modal.Header>
         <form onSubmit={handleSubmit}>
@@ -100,11 +100,11 @@ const ModalUsuarioAdd = ({ show, handleClose }) => {
             </div>
           </Modal.Body>
           <Modal.Footer>
-            <Button variant="secondary" onClick={handleClose}>
-              Close
+            <Button variant="danger" onClick={handleClose}>
+              Cancelar
             </Button>
             <Button variant="success" type="submit" disabled={loading}>
-              Save Changes
+              Guardar cambios
             </Button>
           </Modal.Footer>
         </form>

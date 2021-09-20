@@ -93,8 +93,28 @@ code {
 /* Fin de BOTON CATEGORIA */
 /* --------------------------------------------- */
 
+/* BUSCADOR */
+.busquedaL{
+  z-index: 1;
+  
+  position: absolute;
+  background-color: #f6f6f6;
+  text-decoration: none;
+  list-style:none;
+  font-size: 15px;
+ 
+  box-shadow: 1px 8px 16px 0px rgba(0,0,0,0.24);
+-webkit-box-shadow: 1px 8px 16px 0px rgba(0,0,0,0.24);
+-moz-box-shadow: 1px 8px 16px 0px rgba(0,0,0,0.24);
+}
+/* BUSCADOR */
+
+
+/* --------------------------------------------- */
+
+
 .iconos-nav {
-  color: rgb(255, 128, 44);
+  color: rgb(170, 170, 170);
 }
 /* fin de NavbAR */
 
@@ -141,30 +161,9 @@ code {
 
 /* Footer */
 footer {
-  background-color: rgb(255, 135, 23);
+  background-color: rgb(0, 0, 0);
   margin-top: 50px;
 }
-
-.footer-enl {
-  text-decoration: none;
-  color: #000000;
-  list-style: none;
-}
-
-.footer-enl:hover {
-  opacity: 0.9;
-  color: rgb(0, 0, 0);
-}
-
-.logo-nav {
-  transition-duration: 0.5s;
-}
-
-.logo-nav:hover {
-  transform: scale(1.1);
-  opacity: 0.9;
-}
-
 /* Fin Footer */
 
 /* ---------------------------------------------------------------------------------------------- */
@@ -185,7 +184,7 @@ footer {
   border: 2px solid rgb(245, 179, 104);
 }
 
-.Producto:hover {
+.Producto:hover{
   box-shadow: 0px 1px 15px -1px rgba(255, 90, 0, 0.78);
   -webkit-box-shadow: 0px 1px 15px -1px rgba(255, 90, 0, 0.78);
   -moz-box-shadow: 0px 1px 15px -1px rgba(255, 90, 0, 0.78);
@@ -204,14 +203,7 @@ footer {
   width: 100%;
   height: 300px;
   max-height: 40vh;
-  transition-duration: 0.5s;
 }
-
-.img-producto:hover {
-  transform: scale(0.95);
-  opacity: 1.5;
-}
-
 .marcaText {
   background-color: black;
   border-radius: 7px;
@@ -429,31 +421,33 @@ footer {
 
 /* Fin de User */
 
+
 /* Btn PAGINACION */
-.btn-paginacion {
-  background-color: #ff8800 !important;
-  color: rgb(255, 255, 255) !important;
+.btn-paginacion{
+  background-color:#ff8800 !important;
+  color: rgb(255, 255, 255) !important; 
   border-radius: 90px !important;
 }
-.btn-paginacion:hover {
+.btn-paginacion:hover{
   background-color: white !important;
   color: #ff5100 !important;
   border: 1px solid #ff5100 !important;
 }
 /* Fin Btn PAGINACION */
 
+
 /* Modal Regis */
-.tituloModal {
+.tituloModal{
   background-color: #ff7b00;
-  box-shadow: 0px -4px 13px 5px rgba(29, 29, 29, 0.22);
-  -webkit-box-shadow: 0px -4px 13px 5px rgba(29, 29, 29, 0.22);
-  -moz-box-shadow: 0px -4px 13px 5px rgba(29, 29, 29, 0.22);
+  box-shadow: 0px -4px 13px 5px rgba(29,29,29,0.22);
+-webkit-box-shadow: 0px -4px 13px 5px rgba(29,29,29,0.22);
+-moz-box-shadow: 0px -4px 13px 5px rgba(29,29,29,0.22);
 }
 
-.cuerpoModal {
-  box-shadow: -1px 1px 13px 5px rgba(29, 29, 29, 0.6);
-  -webkit-box-shadow: -1px 1px 13px 5px rgba(29, 29, 29, 0.6);
-  -moz-box-shadow: -1px 1px 13px 5px rgba(29, 29, 29, 0.6);
+.cuerpoModal{
+  box-shadow: -1px 1px 13px 5px rgba(29,29,29,0.6);
+-webkit-box-shadow: -1px 1px 13px 5px rgba(29,29,29,0.6);
+-moz-box-shadow: -1px 1px 13px 5px rgba(29,29,29,0.6);
 }
 
 /* Fin de Modal Regis */

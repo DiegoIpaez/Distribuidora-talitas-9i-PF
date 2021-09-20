@@ -15,7 +15,16 @@ const ModalProductos = ({ show, handleClose, actualizar }) => {
   const [formValue, setFormValue] = useState({
     nombre: "",
     precio: "",
+    Unidad: "",
+    image: "",
     descripcion: "",
+    cod_Producto: "",
+    cod_Barras: "",
+    Ganancia: "",
+    Impuesto_Interno: "",
+    Precio_Lista1: "",
+    Precio_Lista2: "",
+    Precio_Lista3: "",
     categoria: "",
     disponible: true,
   });
@@ -30,7 +39,16 @@ const ModalProductos = ({ show, handleClose, actualizar }) => {
     setFormValue({
       nombre: "",
       precio: "",
+      Unidad: "",
+      image: "",
       descripcion: "",
+      cod_Producto: "",
+      cod_Barras: "",
+      Ganancia: "",
+      Impuesto_Interno: "",
+      Precio_Lista1: "",
+      Precio_Lista2: "",
+      Precio_Lista3: "",
       categoria: "",
       disponible: true,
     });
@@ -39,7 +57,16 @@ const ModalProductos = ({ show, handleClose, actualizar }) => {
         setFormValue({
           nombre: respuesta.producto.nombre,
           precio: respuesta.producto.precio,
+          Unidad: respuesta.producto.Unidad,
+          image: respuesta.producto.image,
           descripcion: respuesta.producto.descripcion,
+          cod_Producto: respuesta.producto.cod_Producto,
+          cod_Barras: respuesta.producto.cod_Barras,
+          Ganancia: respuesta.producto.Ganancia,
+          Impuesto_Interno: respuesta.producto.Impuesto_Interno,
+          Precio_Lista1: respuesta.producto.Precio_Lista1,
+          Precio_Lista2: respuesta.producto.Precio_Lista2,
+          Precio_Lista3: respuesta.producto.Precio_Lista3,
           categoria: respuesta.producto.categoria._id,
           disponible: respuesta.producto.disponible,
         });
@@ -79,6 +106,15 @@ const ModalProductos = ({ show, handleClose, actualizar }) => {
         setFormValue({
           nombre: "",
           precio: "",
+          Unidad: "",
+          image: "",
+          cod_Producto: "",
+          cod_Barras: "",
+          Ganancia: "",
+          Impuesto_Interno: "",
+          Precio_Lista1: "",
+          Precio_Lista2: "",
+          Precio_Lista3: "",
           descripcion: "",
           categoria: "",
           disponible: true,
@@ -98,6 +134,15 @@ const ModalProductos = ({ show, handleClose, actualizar }) => {
         setFormValue({
           nombre: "",
           precio: "",
+          Unidad: "",
+          image: "",
+          cod_Producto: "",
+          cod_Barras: "",
+          Ganancia: "",
+          Impuesto_Interno: "",
+          Precio_Lista1: "",
+          Precio_Lista2: "",
+          Precio_Lista3: "",
           descripcion: "",
           categoria: "",
           disponible: true,
@@ -110,7 +155,7 @@ const ModalProductos = ({ show, handleClose, actualizar }) => {
   return (
     <div>
       <Modal show={show} onHide={handleClose} centered>
-        <Modal.Header closeButton>
+        <Modal.Header className="tituloModal" closeButton>
           <Modal.Title>
             {actualizar ? "Modificar producto" : "Nuevo producto"}
           </Modal.Title>
@@ -140,6 +185,98 @@ const ModalProductos = ({ show, handleClose, actualizar }) => {
               />
             </div>
             <div className="form-group">
+              <label>Unidad</label>
+              <input
+                type="number"
+                name="Unidad"
+                className="form-control"
+                value={formValue.Unidad}
+                onChange={handleChange}
+              />
+            </div>
+            <div className="form-group">
+              <label>Codigo de Producto</label>
+              <input
+                type="number"
+                name="cod_Producto"
+                className="form-control"
+                value={formValue.cod_Producto}
+                onChange={handleChange}
+              />
+            </div>
+            <div className="form-group">
+              <label>Codigo de Barras</label>
+              <input
+                type="number"
+                name="cod_Barras"
+                className="form-control"
+                value={formValue.cod_Barras}
+                onChange={handleChange}
+              />
+            </div>
+            <div className="form-group">
+              <label>Imagen(Url)</label>
+              <input
+                type="text"
+                name="image"
+                className="form-control"
+                placeholder="http:www.image.com"
+                required
+                value={formValue.image}
+                onChange={handleChange}
+              />
+            </div>
+            <div className="form-group">
+              <label>Ganancia</label>
+              <input
+                type="number"
+                name="Ganancia"
+                className="form-control"
+                value={formValue.Ganancia}
+                onChange={handleChange}
+              />
+            </div>
+            <div className="form-group">
+              <label>Impuesto Interno</label>
+              <input
+                type="number"
+                name="Impuesto_Interno"
+                className="form-control"
+                value={formValue.Impuesto_Interno}
+                onChange={handleChange}
+              />
+            </div>
+            <div className="form-group">
+              <label>Precio Lista 1</label>
+              <input
+                type="number"
+                name="Precio_Lista1"
+                className="form-control"
+                value={formValue.Precio_Lista1}
+                onChange={handleChange}
+              />
+            </div>
+            <div className="form-group">
+              <label>Precio Lista 2</label>
+              <input
+                type="number"
+                name="Precio_Lista2"
+                className="form-control"
+                value={formValue.Precio_Lista2}
+                onChange={handleChange}
+              />
+            </div>
+            <div className="form-group">
+              <label>Precio Lista 3</label>
+              <input
+                type="number"
+                name="Precio_Lista3"
+                className="form-control"
+                value={formValue.Precio_Lista3}
+                onChange={handleChange}
+              />
+            </div>
+            <div className="form-group">
               <label>Descripción</label>
               <textarea
                 type="text"
@@ -158,6 +295,7 @@ const ModalProductos = ({ show, handleClose, actualizar }) => {
                 onChange={handleChange}
                 required
               >
+                <option defaultValue="">Elige una categoria</option>
                 {categorias.map((categoria) => (
                   <option key={categoria._id} value={categoria._id}>
                     {categoria.nombre}
@@ -179,11 +317,11 @@ const ModalProductos = ({ show, handleClose, actualizar }) => {
             </div>
           </Modal.Body>
           <Modal.Footer>
-            <Button variant="secondary" onClick={handleClose}>
-              Close
+            <Button variant="danger" onClick={handleClose}>
+              Cancelar
             </Button>
             <Button variant="success" type="submit" disabled={loading}>
-              Save Changes
+              Guardar cambios
             </Button>
           </Modal.Footer>
         </form>

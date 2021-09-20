@@ -1,39 +1,16 @@
-import React, { useEffect, useState } from "react";
-import { getProductos } from "../helpers/productos";
-import { getCategorias } from "../helpers/categorias";
+import React from "react";
+// import { getProductos } from "../helpers/productos"
 
 const BtnCategorias = () => {
+  // const [productos, setProductos] = useState([])
 
-  const [categorias, setCategorias] = useState({
-    datos: [],
-    loading: true,
-  })
-  const [productos, setProductos] = useState({
-    data: [],
-    loading: true
-  });
+  // useEffect(() => {
+  //   getProductos().then((respuesta)=>{
+  //     setProductos(respuesta.productos)
+  //   })
+  // }, [])
 
-  useEffect(() => {
-    getProductos().then((resp) => {
-      setProductos({
-        data: resp.productos,
-        loading: false,
-      });
-      console.log(resp.productos)
-    });
-  }, []);
-
-  useEffect(() => {
-    getCategorias().then((respuesta) => {
-      setCategorias({
-        datos: respuesta.categorias,
-        loading: false,
-      });
-      console.log(respuesta.categorias);
-    });
-  }, []);
-
-
+  // console.log(productos)
 
   return (
     <div className="btn btn-categ me-2">
@@ -47,31 +24,29 @@ const BtnCategorias = () => {
 
       <div className="btn-categ-content container mt-2">
         {/* Categoria */}
-        {categorias.datos.map((categ) => (
-          <div className="row mb-3" key={categ._id}>
-            <div className="btn col-7">
-              <span>{categ.nombre}</span>
-            </div>
-            <div className="col-3"></div>
-            <div className="btn col-2">
-              <i className="fas fa-chevron-right"></i>
-            </div>
+
+        <div className="row mb-3">
+          <div className="btn col-7">
+            <span>Aceite y vinagre</span>
           </div>
-        ))}
-        {/* Producto */}
-        <div className="container btn-categ-content2">
-          {productos.data.map((productos) => (
-            <div className="row mb-3" key={productos._id}>
+          <div className="col-3"></div>
+          <div className="btn col-2">
+            <i className="fas fa-chevron-right"></i>
+          </div>
+          {/* Producto */}
+          <div className="container btn-categ-content2">
+            <div className="row mb-3">
               <div className="btn col-2">
-                <span>{productos.nombre}</span>
+                <span>Aceite</span>
               </div>
               <div className="col-8"></div>
               <div className="btn col-2">
                 <i className="fas fa-chevron-right"></i>
               </div>
             </div>
-          ))}
+          </div>
         </div>
+
         {/* Fin de Categoria */}
         {/* -------------- */}
       </div>

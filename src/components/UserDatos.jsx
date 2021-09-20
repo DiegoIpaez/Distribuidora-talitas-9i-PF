@@ -1,7 +1,14 @@
-import React from "react";
-import { Form, Button } from "react-bootstrap";
+import React, { useEffect, useState } from "react";
+import { Form } from "react-bootstrap";
 
 const UserDatos = () => {
+  const [usuario, setUsuario] = useState([]);
+
+  useEffect(() => {
+    const dataU = JSON.parse(localStorage.getItem("auth"));
+    setUsuario(dataU.usuario);
+  }, []);
+
   return (
     <div className="container mt-5 UserBoxData pt-4 pb-4">
       <Form>
@@ -11,18 +18,18 @@ const UserDatos = () => {
           <div className="col">
             <Form.Group className="mb-3" controlId="formBasicName">
               <Form.Label>Nombre</Form.Label>
-              <Form.Control type="name"  />
+              <Form.Control type="name" placeholder={usuario.nombre} />
             </Form.Group>
           </div>
           <div className="col">
             {" "}
             <Form.Group className="mb-3" controlId="formBasicPassword">
               <Form.Label>Apellido</Form.Label>
-              <Form.Control type="name"  />
+              <Form.Control type="name" />
             </Form.Group>
           </div>
         </div>
-        <div className="row">
+        {/* <div className="row">
           <div className="col-md-4">
             <Form.Group className="mb-3" controlId="formBasic">
               <Form.Label>Fecha de Nac.</Form.Label>
@@ -41,8 +48,8 @@ const UserDatos = () => {
               <Form.Control type="phone" placeholder="3816136233" />
             </Form.Group>
           </div>
-        </div>
-        <div className="row">
+        </div> */}
+        {/* <div className="row">
           <div className="col-md-6">
             <Form.Group className="mb-3" controlId="formBasic3">
               <Form.Label>Tipo de Documento</Form.Label>
@@ -55,14 +62,15 @@ const UserDatos = () => {
               <Form.Control type="text" placeholder="42156746" />
             </Form.Group>
           </div>
-        </div>
+        </div> */}
 
         <Form.Group className="mb-3" controlId="formBasic5">
           <Form.Label>Email</Form.Label>
-          <Form.Control type="email" placeholder="lol@gmail.com" />
+          <Form.Control type="email" placeholder={usuario.email} />
         </Form.Group>
 
-        <div className="row text-center mt-3">
+        {/* llamar boton en los imports */}
+        {/* <div className="row text-center mt-3">
           <div className="col-md-6">
             <Button variant="" type="submit">
               Cancelar
@@ -73,7 +81,7 @@ const UserDatos = () => {
               Guardar
             </Button>
           </div>
-        </div>
+        </div> */}
       </Form>
     </div>
   );

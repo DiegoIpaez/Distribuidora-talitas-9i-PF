@@ -1,9 +1,29 @@
 import React, { useEffect, useState } from "react";
+import { useLocalStorage } from "../helpers/localStorageCart";
 import { getProducto } from "../helpers/productos";
 import { Link, useParams } from "react-router-dom";
 
 const ProductScreen = () => {
   const { id } = useParams();
+
+  // Estado del carrito
+  const [cart, setCart] = useLocalStorage("carrito", []);
+
+  // Funcion para agregar los productos al carrito
+  const addCart = (_id) => {
+    const producto = cart.find((producto) => producto._id === _id);
+    if (producto) {
+      setCart(
+        cart.map((product) =>
+          product._id === _id
+            ? { ...producto, Unidad: producto.Unidad + 1 }
+            : product
+        )
+      );
+    } else {
+      setCart([...cart, { ..._id, Unidad: 1 }]);
+    }
+  };
 
   const [producto, setProducto] = useState({
     data: {},
@@ -18,8 +38,6 @@ const ProductScreen = () => {
       });
     });
   }, [id]);
-
-  console.log(producto);
 
   return (
     <div className="container mt-4">
@@ -37,11 +55,7 @@ const ProductScreen = () => {
             </Link>
           </span>
           <span>|</span>
-          <span className="ps-4 pe-4">
-            <Link className="atajos-text">
-              {producto.data.nombre}
-            </Link>
-          </span>
+          <span className="ps-4 pe-4 atajos-text">{producto.data.nombre}</span>
         </div>
       </div>
       {/*  */}
@@ -50,7 +64,7 @@ const ProductScreen = () => {
           <div className="col">
             <img
               className="img-id mb-4 pt-4 pb-4"
-              src="https://plazavea.vteximg.com.br/arquivos/ids/561697/20190288.jpg?v=637427440868130000"
+              src={producto.data.image}
               alt=""
             />
           </div>
@@ -63,18 +77,16 @@ const ProductScreen = () => {
                 <span className="pe-3">MOLINOS</span>
                 <span>|</span>
                 <span className="ps-3 codigo-product">
-                  Código de producto: 22140120001
+                  Código de producto: {producto.data.cod_Producto}
                 </span>
                 <hr />
                 <span>Precio por unidad</span>
                 <h1 className="precio-producto2 mt-1 mb-4">
                   $ {producto.data.precio}
                 </h1>
-                <Link to="/carrito">
-                  <button className="btn btn-compra ps-5 pe-5 mb-5">
-                    <i className="fas fa-shopping-cart"></i> AGREGAR
-                  </button>
-                </Link>
+                <button className="btn btn-compra ps-5 pe-5 mb-5" onClick={()=>{addCart(producto.data)}}>
+                  <i className="fas fa-shopping-cart"></i> AGREGAR
+                </button>
                 <Link to="/">
                   <button className="btn btn-volver ms-2 mb-5">VOLVER</button>
                 </Link>

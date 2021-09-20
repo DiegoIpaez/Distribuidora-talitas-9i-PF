@@ -1,18 +1,34 @@
 import React from "react";
 import NavLogo from "../assets/img/NavLogo.png";
+// import { useLocalStorage } from "../helpers/localStorageCart";
 import { Link, useHistory } from "react-router-dom";
 import {
   Navbar,
   Container,
   Nav,
   Dropdown,
-  Form,
-  FormControl,
 } from "react-bootstrap";
 import BtnCategorias from "./BtnCategorias";
+import BarraBusqueda from "./BarraBusqueda";
 
 const NavBar = () => {
+  // Estado del carrito
+  // const [cart, setCart] = useLocalStorage("carrito", []);
+
+  // let contadorCart = cart.length
+  // {contadorCart ?( <span>{contadorCart}</span>) :("")}
+
+  //---------------------------
+
+  // Login
   const history = useHistory();
+
+  const logout = () => {
+    localStorage.clear();
+    history.push("/login");
+  };
+  // -----------------------------
+
   return (
     <Navbar collapseOnSelect expand="lg" className="navbar">
       <Container>
@@ -25,7 +41,8 @@ const NavBar = () => {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link>
-              <Form className="d-flex">
+              <BarraBusqueda />
+              {/* <Form className="d-flex">
                 <FormControl
                   type="text"
                   placeholder="Buscar..."
@@ -35,7 +52,7 @@ const NavBar = () => {
                 <button className="btn btn-buscar-nav ms-1" type="submit">
                   <i className="fab fa-sistrix"></i>
                 </button>
-              </Form>
+              </Form> */}
             </Nav.Link>
             <Nav.Link>
               <BtnCategorias />
@@ -74,12 +91,7 @@ const NavBar = () => {
                   </Link>
                 </Dropdown.Item>
                 <Dropdown.Divider />
-                <Dropdown.Item
-                  onClick={() => {
-                    localStorage.removeItem("crypto_app_user");
-                    history.push("/login");
-                  }}
-                >
+                <Dropdown.Item onClick={logout}>
                   <span className="nav-link">
                     <i className="fas fa-sign-out-alt"></i> Salir
                   </span>
