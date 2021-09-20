@@ -1,31 +1,22 @@
 import React, { useEffect, useState } from "react";
 import { postCarrito, getCarritoId, putCarrito } from "../../helpers/carrito";
-import { getProductos } from "../../helpers/productos";
+
 import { Modal, Button } from "react-bootstrap";
 
 const ModalCarrito = ({ show, handleClose, actualizar }) => {
   const [loading, setLoading] = useState(false);
-  const [productosAg, setProductosAg] = useState([]);
+
   const [formValue, setFormValue] = useState({
-    items: "",
     estados: "",
   });
 
   useEffect(() => {
-    getProductos().then((respuesta) => {
-      setProductosAg(respuesta.productos);
-    });
-  }, []);
-
-  useEffect(() => {
     setFormValue({
-      items: "",
       estados: "",
     });
     if (actualizar) {
       getCarritoId(actualizar).then((respuesta) => {
         setFormValue({
-          items: respuesta.CarritoListo.items,
           estados: respuesta.CarritoListo.estados,
         });
       });
@@ -55,7 +46,6 @@ const ModalCarrito = ({ show, handleClose, actualizar }) => {
         }
         setLoading(false);
         setFormValue({
-          items: "",
           estados: "",
         });
         handleClose();
@@ -69,7 +59,6 @@ const ModalCarrito = ({ show, handleClose, actualizar }) => {
         setLoading(false);
 
         setFormValue({
-          items: "",
           estados: "",
         });
         handleClose();
@@ -87,23 +76,11 @@ const ModalCarrito = ({ show, handleClose, actualizar }) => {
         </Modal.Header>
         <form onSubmit={handleSubmit}>
           <Modal.Body>
-            {/* <div className="form-group">
-              <label>Usuario</label>
-              <input
-                type="text"
-                name="usuario"
-                className="form-control"
-                placeholder="Ej: Pedro Perez"
-                required
-                value={formValue.usuario}
-                onChange={handleChange}
-              />
-            </div> */}
             <div className="form-group">
-              <label>Rol</label>
+              <label>Estado del pedido</label>
               <select
                 className="form-select"
-                name="rol"
+                name="estados"
                 aria-label="Default select example"
                 value={formValue.estados}
                 onChange={handleChange}
@@ -114,26 +91,6 @@ const ModalCarrito = ({ show, handleClose, actualizar }) => {
                 <option value="PAUSA">En pausa</option>
                 <option value="CANCELADO">Canselado</option>
                 <option value="CUMPLIDO">Completado exitosamente</option>
-              </select>
-            </div>
-
-            <div className="form-group">
-              <label>Productos</label>
-              <select
-                className="form-select"
-                name="items"
-                aria-label="Default select example"
-                value={formValue.items}
-                onChange={handleChange}
-                required
-              >
-                <option defaultValue="">Elige el item</option>
-                {productosAg.map((productoA) => (
-                  <option key={productoA._id} value={productoA._id}>
-                    {productoA.nombre}
-                  </option>
-                ))}
-               
               </select>
             </div>
           </Modal.Body>
