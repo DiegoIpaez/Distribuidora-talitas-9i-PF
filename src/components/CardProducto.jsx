@@ -41,12 +41,18 @@ const CardProducto = ({ producto, cart, setCart }) => {
           </h6>
           <h6 className="precio-producto mt-3 pe-1">${precio}</h6>
 
-          <button
-            className="btn btn-compra pe-5 ps-5 mb-3 mt-1"
-            onClick={() => addCart(producto)}
-          >
-            <i className="fas fa-shopping-cart"></i> AGREGAR
-          </button>
+          {disponible ? (
+            <button
+              className="btn btn-compra pe-5 ps-5 mb-3 mt-1"
+              onClick={() => addCart(producto)}
+            >
+              <i className="fas fa-shopping-cart"></i> AGREGAR
+            </button>
+          ) : (
+            <button className="btn btn-secondary pe-5 ps-5 mb-3 mt-1">
+              <i className="fas fa-shopping-cart"></i> AGREGAR
+            </button>
+          )}
         </div>
       </div>
     </>

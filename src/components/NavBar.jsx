@@ -55,6 +55,12 @@ const NavBar = () => {
               </Form> */}
             </Nav.Link>
             <Nav.Link>
+              <div className="pe-1"></div>
+            </Nav.Link>
+            <Nav.Link>
+              <div className="pe-1"></div>
+            </Nav.Link>
+            <Nav.Link>
               <BtnCategorias />
             </Nav.Link>
           </Nav>

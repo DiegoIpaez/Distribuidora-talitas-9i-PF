@@ -84,9 +84,23 @@ const ProductScreen = () => {
                 <h1 className="precio-producto2 mt-1 mb-4">
                   $ {producto.data.precio}
                 </h1>
-                <button className="btn btn-compra ps-5 pe-5 mb-5" onClick={()=>{addCart(producto.data)}}>
-                  <i className="fas fa-shopping-cart"></i> AGREGAR
-                </button>
+                {producto.data.disponible ? (
+                  <button
+                    className="btn btn-compra ps-5 pe-5 mb-5"
+                    onClick={() => {
+                      addCart(producto.data);
+                    }}
+                  >
+                    <i className="fas fa-shopping-cart"></i> AGREGAR
+                  </button>
+                ) : (
+                  <button
+                    className="btn btn-secondary ps-5 pe-5 mb-5"
+                  >
+                    <i className="fas fa-shopping-cart"></i> AGREGAR
+                  </button>
+                )}
+
                 <Link to="/">
                   <button className="btn btn-volver ms-2 mb-5">VOLVER</button>
                 </Link>
