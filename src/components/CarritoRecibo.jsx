@@ -1,26 +1,20 @@
 import React, { useState } from "react";
 import { postCarrito } from "../helpers/carrito";
 
-const CarritoRecibo = ({ cart, setCart }) => {
+const CarritoRecibo = ({ cart }) => {
+
+  // Estado de los items
+  const [pedidos, setPedidos] = useState({items: cart,});
+
+
   // Funcion para subir los productos a la BD
-  const [pedidos, setPedidos] = useState({
-    items: [{}],
-  });
-
-  // useEffect(() => {
-  //   setPedidos(cart);
-  // }, []);
-
-  const añadirCart = () => {
+  const añadirCart = (data) => {
     postCarrito(pedidos).then((respuesta) => {
       if (respuesta.errors) {
         return window.alert(respuesta.errors[0].msg);
       }
 
-      setPedidos({
-        items: cart,
-      })
-      console.log(respuesta)
+      setPedidos({items: data,})
     });
   };
 

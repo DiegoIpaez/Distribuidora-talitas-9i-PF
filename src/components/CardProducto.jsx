@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const CardProducto = ({ producto, productos, cart, setCart }) => {
-  let { _id, nombre, precio, image } = producto;
+const CardProducto = ({ producto, cart, setCart }) => {
+  let { _id, nombre, precio, image, disponible } = producto;
 
   // Funcion para agregar los productos al carrito
   const addCart = (_id) => {
@@ -33,7 +33,11 @@ const CardProducto = ({ producto, productos, cart, setCart }) => {
             </Link>
           </h6>
           <h6>
-            <span className="marcaText ps-3 pe-3 pb-1">molinos</span>
+            {disponible ? (
+              <span className="marcaText ps-3 pe-3 pb-1">Disponible</span>
+            ) : (
+              <span className="marcaText ps-3 pe-3 pb-1">No disponible</span>
+            )}
           </h6>
           <h6 className="precio-producto mt-3 pe-1">${precio}</h6>
 

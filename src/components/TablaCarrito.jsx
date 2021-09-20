@@ -4,12 +4,12 @@ import BtnPaginacion from "./BtnPaginacion";
 import ModalCarrito from "./modals/ModalCarrito";
 
 const TablaCarrito = () => {
+  const [actualizar, setActualizar] = useState("");
   const [carrito, setCarrito] = useState({
     datos: [],
     loading: true,
   });
 
-  // console.log(carrito)
 
   const [pagina, setPagina] = useState(0);
   const [totPag, setTotpag] = useState(0);
@@ -25,6 +25,8 @@ const TablaCarrito = () => {
       setTotpag(respuesta.Total);
     });
   }, []);
+
+ 
 
 
   useEffect(() => {
@@ -78,7 +80,10 @@ const TablaCarrito = () => {
         <div className="col-5 pt-3 pb-3">Id</div>
         <div className="col-5 pt-3 pb-3">Usuario</div>
         <div className="col-2 mt-2 text-center">
-          <button className="btn" onClick={handleShow}>
+          <button className="btn" onClick={() => {
+              setActualizar("");
+              handleShow();
+            }}>
             <i className="fas fa-user-plus"></i>
           </button>
         </div>
@@ -91,9 +96,15 @@ const TablaCarrito = () => {
           <div className="col-md-5 col-4 mt-2">{carrit._id}</div>
           <div className="col-md-5 col-6 mt-2">{carrit.usuario.email}</div>
           <div className="col-md-2 col-2 mt-1 text-center">
-            {/* <button className="btn btn-danger" onClick={() => borrarCarrito(carrit._id)}>
-              <i className="fas fa-trash-alt"></i>
-            </button> */}
+          <button
+              className="btn btn-primary"
+              onClick={() => {
+                setActualizar(carrit._id);
+                handleShow();
+              }}
+            >
+              <i className="far fa-edit"></i>
+            </button>
           </div>
           <hr className="mt-2" />
         </div>
@@ -103,7 +114,7 @@ const TablaCarrito = () => {
       <div className="text-center">
         <BtnPaginacion totPag={totPag} pagina={pagina} setPagina={setPagina} />
       </div>
-      <ModalCarrito show={show} handleClose={handleClose} />
+      <ModalCarrito show={show} handleClose={handleClose} actualizar={actualizar} />
     </div>
   );
 };

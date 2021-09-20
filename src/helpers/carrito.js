@@ -40,19 +40,19 @@ export const getCarrito = async (desde) => {
     return datos;
   };
 
-//   export const putCarrito = async (id, data) => {
-//     const resp = await fetch(`${url}/${id}`, {
-//       method: "PUT",
-//       body: JSON.stringify(data),
-//       headers: {
-//         "Content-type": "application/json; charset=UTF-8",
-//         "x-token": JSON.parse(localStorage.getItem("auth")).token,
-//       },
-//     });
-//     const datos = await resp.json();
+  export const putCarrito = async (id, data) => {
+    const resp = await fetch(`${url}/${id}`, {
+      method: "PUT",
+      body: JSON.stringify(data),
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+        "x-token": JSON.parse(localStorage.getItem("auth")).token,
+      },
+    });
+    const datos = await resp.json();
   
-//     return datos;
-//   };
+    return datos;
+  };
 
   export const deleteCarrito = async (id) => {
     const resp = await fetch(`${url}/${id}`, {

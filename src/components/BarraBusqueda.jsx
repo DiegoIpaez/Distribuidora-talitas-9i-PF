@@ -69,7 +69,7 @@ const BarraBusqueda = () => {
         <ul className="busquedaL">
           <li className="pt-2 pb-2 pe-4">
             {" "}
-            <span >Producto no encontrado...</span>
+            <span>Producto no encontrado...</span>
           </li>
         </ul>
       )}
