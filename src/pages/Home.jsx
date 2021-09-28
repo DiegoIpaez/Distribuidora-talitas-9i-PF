@@ -31,7 +31,13 @@ const Home = () => {
   return (
     <div className="container mt-4">
       <div className="row">
-        <Carrusel />
+        <div className="container">
+          <div className="row">
+            <div className="col"><Carrusel /></div>
+            
+          </div>
+        </div>
+        
       </div>
       <div className="container mt-5">
         <div>

@@ -1,4 +1,4 @@
-const url = "http://localhost:8080/api/carrito";
+const url = "https://backend-di.herokuapp.com/api/carrito";
 
 export const getCarrito = async (desde) => {
     const resp = await fetch(`${url}?desde=${desde}`, {

@@ -6,61 +6,76 @@ import NavLogo from "../assets/img/NavLogo.png";
 const Footer = () => {
   return (
     <footer>
-      <div className="container pt-5 pb-5 text-black text-center">
+      <div className="container pt-4 pb-3 text-black text-center">
         {/* Seccion redes */}
 
         <div className="row">
-          <div className="col-6 text-white">
+          {/* Grupo y imagen */}
+          <div className="col-4 text-white">
             <div>
-              <h4>LOS RAPAS - GRUPO 1</h4>
+              <h6>TeamOne - Los Rapas</h6>
             </div>
 
             <div>
-              <img src={NavLogo} className="logo-nav mt-4" alt="" />
+              <img src={NavLogo} className="logo-nav mt-2 mb-1" alt="" />
             </div>
 
-            <div className="mt-4"></div>
-
-            <div className="mt-4">
+            <div className="mt-3 footer-enl">
               <i className="fa fa-mobile text-white" aria-hidden="true"></i>
-              <strong> +54 381 504-5252</strong>
+              <span> +54 381 504-5252</span>
             </div>
 
-            <div className="mt-4">
+            <div className="mt-2 footer-enl">
               <i className="fa fa-envelope text-white" aria-hidden="true"></i>
-              <strong> distribuidoralastalitas@gmail.com</strong>
+              <span> distribuidoralastalitas@gmail.com</span>
             </div>
           </div>
-          <div className="col-6 text-white">
-            <h4>ENLACES IMPORTANTES </h4>
-            <div className=" mt-4">
+
+          {/* Redes Sociales */}
+          <div className="col-4 text-white">
+            <h6>Redes Sociales</h6>
+            <div className="mt-3">
+              <h2>
+                <i className="fab fa-facebook-square"></i>
+              </h2>
+              <h2>
+                <i className="fab fa-instagram-square"></i>
+              </h2>
+              <h2>
+              <i className="fab fa-twitter-square"></i>
+              </h2>
+            </div>
+          </div>
+
+          {/* Enlaces Importantes */}
+          <div className="col-4 text-white">
+            <h6>Enlaces Importantes</h6>
+            <div className=" mt-3">
               <Link className="footer-enl" to="/sobre">
                 Sobre Nosotros
               </Link>
             </div>
-            <div className="footer-enl mt-4">
+            <div className="footer-enl mt-3">
               <Link className="footer-enl" to="/contact">
                 Contacto
               </Link>{" "}
             </div>
-            <div className="mt-4">
+            <div className="mt-3">
               <Link className="footer-enl" to="/sobre">
                 Temino y condiciones
               </Link>{" "}
             </div>
-            <div className="mt-4">
+            <div className="mt-3">
               <Link className="footer-enl" to="/sobre">
                 Políticas y Privacidad
               </Link>{" "}
             </div>
           </div>
         </div>
-        <div className="row mt-5 text-white">
+        <div className="row mt-5 footer-enl text-white">
           <span>
-            <strong>
-              Copyright 2021 :derechos_de_autor: GRUPOROLLING S.A.
-              CUIL:30-20202020-2 Todos los derechos reservados
-            </strong>
+            ©Copyright 2021 :derechos_de_autor: GRUPOROLLING S.A.
+            CUIL:30-20202020-2 Todos los derechos reservados
           </span>
         </div>
       </div>

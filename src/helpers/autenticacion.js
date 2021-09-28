@@ -1,5 +1,5 @@
 // const url = "https://restserver-pm.herokuapp.com";
-const url = "http://localhost:8080/api/auth/login"
+const url = "https://backend-di.herokuapp.com"
 
 //Añadir tokens
 export const postAuth = async (data) => {

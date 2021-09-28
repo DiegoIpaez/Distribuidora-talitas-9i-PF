@@ -1,5 +1,5 @@
 // const url = "https://restserver-pm.herokuapp.com";
-const url = "http://localhost:8080"
+const url = "https://backend-di.herokuapp.com"
 
 //traigo a los usuarios
 export const getUsuarios = async (desde) => {

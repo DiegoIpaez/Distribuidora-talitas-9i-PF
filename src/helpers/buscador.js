@@ -1,4 +1,4 @@
-const url = "http://localhost:8080/api/buscar"
+const url = "https://backend-di.herokuapp.com/api/buscar"
 
 export const getBuscar = async (coleccion, termino) => {
     const resp = await fetch(`${url}/${coleccion}/${termino}`, {

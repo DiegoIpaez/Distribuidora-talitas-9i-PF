@@ -162,13 +162,15 @@ code {
 /* Footer */
 footer {
   background-color: rgb(0, 0, 0);
-  margin-top: 180px;
+  margin-top: 60px;
 }
 
 .footer-enl {
   text-decoration: none;
   color: #ffffff;
   list-style: none;
+  font-size: 13px;
+
 }
 
 .footer-enl:hover {

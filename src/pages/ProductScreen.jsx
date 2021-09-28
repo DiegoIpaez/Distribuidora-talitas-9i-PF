@@ -45,13 +45,13 @@ const ProductScreen = () => {
         <div className="col mt-2 atajos-id">
           <span className="pe-4">
             <Link to="/" className="atajos-text">
-              Inicio
+              INICIO
             </Link>
           </span>
           <span>|</span>
           <span className="ps-4 pe-4">
             <Link to="/ola" className="atajos-text">
-              Aceite
+              CATEGORIA
             </Link>
           </span>
           <span>|</span>
