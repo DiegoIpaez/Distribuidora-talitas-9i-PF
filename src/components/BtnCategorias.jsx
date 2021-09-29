@@ -1,57 +1,109 @@
-import React from "react";
-// import { getProductos } from "../helpers/productos"
+import React, { useEffect, useState } from "react";
+import { getCategorias } from "../helpers/categorias";
+import { getCategoriasP } from "../helpers/categoriasP";
+import { getProductos } from "../helpers/productos";
+
 
 const BtnCategorias = () => {
-  // const [productos, setProductos] = useState([])
+  const [categoriasP, setCategoriasP] = useState({
+    datos: [],
+    loading: true,
+  });
 
-  // useEffect(() => {
-  //   getProductos().then((respuesta)=>{
-  //     setProductos(respuesta.productos)
-  //   })
-  // }, [])
+  const [categorias, setCategorias] = useState({
+    datos: [],
+    loading: true,
+  });
 
-  // console.log(productos)
+  const [productos, setProductos] = useState({
+    datos: [],
+    loading: true,
+  });
+
+  useEffect(() => {
+    getCategoriasP().then((resp) => {
+      setCategoriasP({
+        datos: resp.categoriasP,
+        loading: false,
+      });
+    });
+  }, []);
+
+
+  useEffect(() => {
+    getCategorias().then((respuesta) => {
+      setCategorias({
+        datos: respuesta.categorias,
+        loading: false,
+      });
+    });
+  }, []);
+
+  useEffect(() => {
+    getProductos().then((devolver) => {
+      setProductos({
+        datos: devolver.productos,
+        loading: false,
+      });
+    });
+  }, []);
+
+  console.log(categorias);
+  console.log(categoriasP);
+  console.log(productos);
 
   return (
-    <div className="btn btn-categ me-2">
-      {/* Contenedor */}
-      <i className="fas fa-bars pe-1 iconos-nav"></i>
-      <span>CATEGORIAS </span>
-      <i className="fas fa-angle-down iconos-nav"></i>
-      {/*Fin de Contenedor */}
-      {/* ------------------ */}
-      {/* Cuerpo del dropdown */}
-
-      <div className="btn-categ-content container mt-2">
-        {/* Categoria */}
-
-        <div className="row mb-3">
-          <div className="btn col-7">
-            <span>Aceite y vinagre</span>
-          </div>
-          <div className="col-3"></div>
-          <div className="btn col-2">
-            <i className="fas fa-chevron-right"></i>
-          </div>
-          {/* Producto */}
-          <div className="container btn-categ-content2">
-            <div className="row mb-3">
-              <div className="btn col-2">
-                <span>Aceite</span>
-              </div>
-              <div className="col-8"></div>
-              <div className="btn col-2">
-                <i className="fas fa-chevron-right"></i>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Fin de Categoria */}
-        {/* -------------- */}
+    <div className="container-fluid">
+      <button
+        className="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#main_nav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span className="navbar-toggler-icon"></span>
+      </button>
+      <div className="collapse navbar-collapse" id="main_nav">
+        <ul className="navbar-nav">
+          <li className="nav-item dropdown" id="myDropdown">
+            <span
+              className="nav-link dropdown-toggle"
+              data-bs-toggle="dropdown"
+            >
+              CATEGORIAS
+            </span>
+            <ul className="dropdown-menu">
+              {/* Aqui va el primer mapeo de la categoria Padre */}
+              {categoriasP.datos.map((categoriasP) => (
+                <li key={categoriasP._id}>
+                  <span className="dropdown-item">
+                    {categoriasP.nombre} &raquo;
+                  </span>
+                  {categorias.datos.map((categorias) => (
+                    <ul key={categorias._id} className="submenu dropdown-menu">
+                      <li>
+                        <span className="dropdown-item">
+                          {categorias.nombre} &raquo;
+                        </span>
+                        <ul className="submenu dropdown-menu">
+                          {productos.datos.map((productos) => (
+                            <li key={productos._id}>
+                              <span className="dropdown-item">
+                                {productos.nombre}
+                              </span>
+                            </li>
+                          ))}
+                        </ul>
+                      </li>
+                    </ul>
+                  ))}
+                </li>
+              ))}
+            </ul>
+          </li>
+        </ul>
       </div>
-
-      {/* Fin Cuerpo Dropdown */}
     </div>
   );
 };
