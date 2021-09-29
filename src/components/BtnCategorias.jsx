@@ -48,8 +48,8 @@ const BtnCategorias = () => {
     });
   }, []);
 
-  console.log(categorias);
   console.log(categoriasP);
+  console.log(categorias);
   console.log(productos);
 
   return (

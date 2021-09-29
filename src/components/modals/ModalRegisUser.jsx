@@ -1,11 +1,7 @@
 import React, { useState } from "react";
 import { postUsuario } from "../../helpers/usuarios";
 import { Modal, Button } from "react-bootstrap";
-// import * as emailjs from "emailjs-com";
-
-// const SERVICE_ID = "service_fr0y6dh";
-// const TEMPLATE_ID = "template_kb5deza";
-// const USER_ID = "user_JC9UeN1IaGcp4JNjv776i";
+import * as emailjs from "emailjs-com";
 
 const ModalRegisUser = ({ show, handleClose }) => {
   const [loading, setLoading] = useState(false);
@@ -16,30 +12,6 @@ const ModalRegisUser = ({ show, handleClose }) => {
     rol: "USER_ROLE",
   });
 
-      // if (nombre && email && password) {
-      //   console.log(`nombre:${nombre}, email:${email}, password${password}`);
-      //   const templeteParams = {
-      //     from_name: "Distribuidora Las Talitas",
-      //     to_name: nombre,
-      //     messege: "Bienvenido, se realizó con exito tu registro.",
-      //     to: email,
-      //   };
-      //   console.log(templeteParams);
-
-      //   emailjs.send(SERVICE_ID, TEMPLATE_ID, templeteParams, USER_ID).then(
-      //     function (response) {
-      //       console.log("SUCCES!", response.status, response.text);
-      //     },
-      //     function (error) {
-      //       console.log("FAILED...", error);
-      //     }
-      //   );
-
-      //   const apiResponse = {
-      //     ok: true,
-      //     msg: "Registro exitoso."
-      //   }
-      // }
 
   const handleChange = (e) => {
     setFormValue({
@@ -54,7 +26,7 @@ const ModalRegisUser = ({ show, handleClose }) => {
     setLoading(true);
 
     postUsuario(formValue).then((respuesta) => {
-      //   console.log(respuesta);
+
       if (respuesta.errors) {
         setLoading(false);
         return window.alert(respuesta.errors[0].msg);
@@ -66,6 +38,21 @@ const ModalRegisUser = ({ show, handleClose }) => {
         password: "",
         rol: "USER_ROLE",
       });
+        console.log(respuesta.usuario.nombre)
+      const templeteParams = {
+        destinario: respuesta.usuario.email,
+        user_name: respuesta.usuario.nombre,
+      };
+
+      emailjs.send("service_fr0y6dh","template_kb5deza", templeteParams, "user_JC9UeN1IaGcp4JNjv776i")
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
       handleClose();
     });
   };
